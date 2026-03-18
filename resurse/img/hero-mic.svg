@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" width="480" height="320">
+  <rect width="480" height="320" fill="#1A1A1A"/>
+  <rect x="160" y="60" width="160" height="200" rx="12" fill="#A8FF3E" opacity="0.8"/>
+  <text x="240" y="175" font-family="Arial" font-size="18" font-weight="bold"
+        text-anchor="middle" fill="#0D0D0D">NutriCore</text>
+  <text x="240" y="200" font-family="Arial" font-size="12"
+        text-anchor="middle" fill="#0D0D0D">Whey Protein</text>
+  <text x="240" y="290" font-family="Arial" font-size="10"
+        text-anchor="middle" fill="#A0A0A0">Versiune mobil (480px)</text>
+</svg>

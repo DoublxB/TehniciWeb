@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<!-- Linia 1: DOCTYPE + lang="ro" — cerinta (0.025) -->
+<html lang="ro">
+<head>
+    <!-- Linia 5: meta charset — cerinta (0.05) -->
+    <meta charset="UTF-8">
+    <!-- Linia 7: meta viewport — buna practica, nu e in lista celor 4 obligatorii -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Linia 9: meta author — cerinta (0.05) -->
+    <meta name="author" content="Student Tehnici Web — NutriCore Performanta si Nutritie">
+    <!-- Linia 11: meta keywords (cuvinte cheie din Etapa 0) — cerinta (0.05) -->
+    <meta name="keywords" content="suplimente care chiar functioneaza, proteine pentru sala pret, magazin nutritie sportiva, vitamine fitness online, cele mai bune suplimente, nutritie de incredere, creatina, aminoacizi, bcaa, zer izolat, suplimente sportive">
+    <!-- Linia 13: meta description — cerinta (0.05) -->
+    <meta name="description" content="NutriCore — Suplimentele tale de performanta, nutritie de incredere. Magazin nutritie sportiva cu proteine, creatina, vitamine si aminoacizi care chiar functioneaza.">
+    <!-- Linia 15: msapplication-TileColor — cerinta favicon (0.025) -->
+    <meta name="msapplication-TileColor" content="#A3E635">
+    <!-- Linia 17-24: Favicon generat cu RealFaviconGenerator — cerinta (0.025) -->
+    <link rel="icon" type="image/png" href="resurse/ico/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="resurse/ico/favicon.svg">
+    <link rel="shortcut icon" href="resurse/ico/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="resurse/ico/apple-touch-icon.png">
+    <link rel="manifest" href="resurse/ico/site.webmanifest">
+
+    <!-- Linia 26: title — cerinta (0.05) -->
+    <title>NutriCore – Performanță și Nutriție | Magazin Suplimente Sportive</title>
+
+    <!-- Etapa 2: Foi de stiluri CSS -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============================================================
+     HEADER — cerinta (0.025): impartire body in header, main, footer
+     cerinta (0.05): nav cu lista neordonata de linkuri, h1
+============================================================= -->
+<header id="sus">
+    <!-- Linia 35: h1 pentru titlul site-ului — cerinta (0.05) -->
+    <h1>NutriCore – Performanță și Nutriție</h1>
+
+    <!-- Linia 38: nav cu lista principala si sublista pentru Acasa — cerinta (0.05) -->
+    <nav>
+        <ul>
+            <li>
+                <!-- Optiunea principala: Acasa -->
+                <a href="index.html">Acasă</a>
+                <!-- Linia 44: Sublista cu linkuri catre sectiunile paginii — cerinta (0.05) -->
+                <ul>
+                    <li><a href="#despre">Despre NutriCore</a></li>
+                    <li><a href="#produse">Produsele Noastre</a></li>
+                    <li><a href="#galerie">Galerie</a></li>
+                    <li><a href="#evenimente">Evenimente</a></li>
+                    <li><a href="#top-produse">Top Produse</a></li>
+                    <li><a href="#video">Videoclipuri</a></li>
+                    <li><a href="#statistici">Statistici</a></li>
+                    <li><a href="#intrebari">Întrebări Frecvente</a></li>
+                </ul>
+            </li>
+            <!-- Optiunile principale: celelalte pagini (vor fi generate prin Node) -->
+            <li><a href="magazin.html">Magazin</a></li>
+            <li><a href="blog.html">Blog &amp; Ghiduri</a></li>
+            <li><a href="contact.html">Contact &amp; Povestea Mea</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- ============================================================
+     MAIN — continut principal
+============================================================= -->
+<main>
+
+<!-- Grid principal: cuprinde tot continutul din main (cerinta Etapa 2) -->
+<div class="grid-pagina">
+
+    <!-- ===========================================================
+         ZONA 8: Conținut Divers — Despre, Produse și Ghiduri Video
+         (Prima in DOM dar plasata vizual in dreapta prin CSS Grid)
+    ============================================================ -->
+    <div class="zona-8">
+
+    <!-- ==========================================================
+         SECTIUNEA 1: DESPRE NUTRICORE
+         h2 — sectiune direct in main (primul nivel de imbricare)
+         cerinta (0.05): section imbricat, heading la nivel corect
+    =========================================================== -->
+    <section id="despre">
+
+        <!-- Linia 73: hgroup cu subtitlu — cerinta (0.025) -->
+        <hgroup>
+            <h2>Despre NutriCore</h2>
+            <p>Mai mult decât un magazin — partenerul tău de performanță</p>
+        </hgroup>
+
+        <!-- Linia 79: p — cerinta (0.025) taguri de grupare -->
+        <p>
+            <!-- Linia 81: b pentru cuvinte cheie — cerinta (0.075) text inline -->
+            <b>NutriCore</b> este <b>magazinul de nutritie sportiva</b> unde vei găsi
+            <b>suplimente care chiar funcționează</b>, formulate pe baza cercetării
+            științifice. Îți oferim <b>vitamine fitness online</b> și proteine premium,
+            pentru că <b>nutritia de incredere</b> este fundația oricărei performanțe.
+        </p>
+
+        <p>
+            Piața de suplimente este plină de produse, dar mulți cumpărători se simt pierduți.
+            La NutriCore nu suntem
+            <!-- Linia 91: em pentru accent/ironie — cerinta (0.075) -->
+            <em>doar</em>
+            un alt magazin online — suntem partenerul tău real de nutriție sportivă.
+        </p>
+
+        <p>
+            <!-- Linia 97: s (text șters) și ins (text inserat) — cerinta (0.075) -->
+            <s>Inițial, site-ul nostru vindea exclusiv proteine.</s>
+            <ins>Acum oferim o gamă completă: proteine, creatină, vitamine,
+            aminoacizi și suplimente pentru greutate optimă.</ins>
+        </p>
+
+        <p>
+            <!-- Linia 103: dfn pentru termen definit — cerinta (0.075) -->
+            Folosim termenul <dfn>biodisponibilitate</dfn> — proporția dintr-un nutrient
+            care este absorbită și utilizată efectiv de organism — drept criteriu principal
+            în selectarea tuturor produselor din portofoliul nostru.
+        </p>
+
+        <p>
+            <!-- Linia 109: abbr cu title — cerinta (0.075) -->
+            Formulele noastre sunt realizate cu <abbr title="Whey Protein Isolate">WPI</abbr>
+            de cea mai înaltă puritate, testate conform standardelor
+            <abbr title="Good Manufacturing Practice">GMP</abbr>.
+        </p>
+
+        <!-- Linia 115: blockquote cu cite (atribut) — cerinta (0.025) taguri de grupare -->
+        <blockquote cite="https://jissn.biomedcentral.com/articles/10.1186/s12970-017-0177-8">
+            <p>
+                <!-- Linia 118: q pentru citat inline — cerinta (0.075) -->
+                <q>Proteina din zer reprezintă sursa proteică cu cea mai ridicată
+                biodisponibilitate biologică disponibilă în prezent.</q>
+            </p>
+            <!-- Linia 122: cite pentru titlul lucrarii citate — cerinta (0.075) -->
+            <p>— <cite>Journal of the International Society of Sports Nutrition</cite></p>
+        </blockquote>
+
+        <!-- Linia 126: strong pentru anunț urgent — cerinta (0.075) -->
+        <strong>ATENȚIE: Stocul de produse din campania de primăvară este limitat!
+        Comandă acum cele mai bune suplimente înainte să se epuizeze!</strong>
+
+        <!-- =======================================================
+             SECTIUNEA IMBRICATA: MISIUNEA NOASTRA
+             h3 — sectiune in sectiune (al doilea nivel de imbricare)
+             cerinta (0.05): taguri de sectionare imbricate
+        ======================================================== -->
+        <section id="misiune">
+            <h3>Misiunea Noastră</h3>
+
+            <p>
+                Vrem să fie simplu: un începător să nu se simtă intimidat, iar un sportiv de
+                performanță să găsească rapid <b>cele mai bune suplimente</b>.
+                Cum ne descriu clienții noștri:
+                <q>La NutriCore, în fine, ai pe cineva care te ajută să înțelegi ce cumperi.</q>
+            </p>
+
+            <!-- Linia 141: dl (lista de definitii) — cerinta (0.025) taguri de grupare -->
+            <dl>
+                <dt>Transparență</dt>
+                <dd>Publicăm toate ingredientele și sursele de materii prime
+                pentru fiecare produs din portofoliu.</dd>
+
+                <dt>Calitate Certificată</dt>
+                <dd>Produse testate de laboratoare independente certificate
+                <abbr title="Good Manufacturing Practice">GMP</abbr>.</dd>
+
+                <dt>Educație Nutritivă</dt>
+                <dd>Ghiduri gratuite despre cum să folosești corect fiecare
+                <b>supliment care chiar funcționează</b>.</dd>
+            </dl>
+
+            <!-- ===================================================
+                 SECTIUNEA IMBRICATA DE NIVEL 3: FORMULA MATEMATICA
+                 h4 — sectiune in sectiune in sectiune
+                 Bonus: formula MathML relevanta pentru site
+            ==================================================== -->
+            <section id="formula-nutritie">
+                <h4>Formula Necesarului de Proteine</h4>
+                <p>Cantitatea zilnică recomandată de proteine pentru sportivi activi:</p>
+
+                <!-- Linia 162: MathML — BONUS -->
+                <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                    <mrow>
+                        <msub>
+                            <mi>P</mi>
+                            <mi>zilnic</mi>
+                        </msub>
+                        <mo>(</mo><mi>g</mi><mo>)</mo>
+                        <mo>=</mo>
+                        <mn>1.8</mn>
+                        <mo>&#x00D7;</mo>
+                        <msub>
+                            <mi>G</mi>
+                            <mi>corp</mi>
+                        </msub>
+                        <mo>(</mo><mi>kg</mi><mo>)</mo>
+                    </mrow>
+                </math>
+
+                <p>
+                    unde
+                    <math xmlns="http://www.w3.org/1998/Math/MathML">
+                        <msub><mi>P</mi><mi>zilnic</mi></msub>
+                    </math>
+                    este necesarul de proteine în grame pe zi, iar
+                    <math xmlns="http://www.w3.org/1998/Math/MathML">
+                        <msub><mi>G</mi><mi>corp</mi></msub>
+                    </math>
+                    este greutatea corporală în kilograme.
+                </p>
+            </section>
+
+        </section>
+        <!-- sfarsit section#misiune -->
+
+    </section>
+    <!-- sfarsit section#despre -->
+
+
+    <!-- ==========================================================
+         SECTIUNEA 2: PRODUSELE NOASTRE
+         h2 — sectiune direct in main
+         Contine article-uri (sectiuni imbricate) cu h3
+    =========================================================== -->
+    <section id="produse">
+        <h2>Produsele Noastre</h2>
+        <p>
+            Toate <b>produsele de nutritie sportiva</b> sunt organizate pe 4 categorii
+            principale, astfel încât să găsești ce cauți în maximum 3 click-uri.
+            De la <b>proteine pentru sala la pret</b> accesibil, până la
+            <b>vitamine fitness online</b> specializate.
+        </p>
+
+        <!-- Linia 205: article — cerinta (0.05) tag de sectionare imbricat -->
+        <article id="proteine">
+            <h3>Cărămizile Musculare — Proteine</h3>
+            <p>
+                <!-- Linia 209: i pentru termeni tehnici/straini — cerinta (0.075) -->
+                Oferim <i>Whey Concentrate</i>, <i>Whey Protein Isolate</i> și variante
+                vegane pe bază de <i>pea protein</i> (proteina din mazăre). Toate
+                <b>proteinele pentru sala</b> sunt disponibile în multiple arome naturale.
+            </p>
+            <!-- Linia 214: link extern (new tab) — cerinta (0.1) — NU in meniu -->
+            <p>
+                <a href="https://jissn.biomedcentral.com/articles/10.1186/s12970-017-0177-8"
+                   target="_blank" rel="noopener noreferrer">
+                    Citește studiile clinice despre proteina Whey și sinteza musculară (JISSN)
+                </a>
+            </p>
+        </article>
+
+        <article id="aminoacizi">
+            <h3>Energie și Recuperare — Aminoacizi</h3>
+            <p>
+                Produse pentru consum în timpul sau imediat după antrenament, pentru a preveni
+                <i>delayed onset muscle soreness</i>
+                (<abbr title="Delayed Onset Muscle Soreness">DOMS</abbr>).
+                Gama noastră de <abbr title="Branched-Chain Amino Acids">BCAA</abbr>
+                este disponibilă în multiple arome, fără zahăr adăugat.
+            </p>
+        </article>
+
+        <article id="vitamine">
+            <h3>Sănătate și Vitalitate — Vitamine</h3>
+            <p>
+                Comandă <b>vitamine fitness online</b> de calitate certificată:
+                Vitamina D3+K2, complexul B pentru energie, Omega-3 și multivitamine
+                complete pentru sportivi. Performanța nu înseamnă doar mușchi,
+                ci și un sistem imunitar puternic.
+            </p>
+        </article>
+
+        <article id="greutate-optima">
+            <h3>Obiectiv: Greutate Optimă</h3>
+            <p>
+                Soluții pentru arderea grăsimilor: <i>fat burners</i> naturali pe bază
+                de extracte botanice, <i>L-Carnitine</i> și shake-uri de înlocuire a mesei.
+                Toate reprezintă <b>suplimente care chiar funcționează</b> pentru
+                <b>cele mai bune rezultate</b> în slăbit sănătos.
+            </p>
+        </article>
+
+    </section>
+    <!-- sfarsit section#produse -->
+
+    </div>
+    <!-- sfarsit div.zona-8 -->
+
+
+    <!-- ==========================================================
+         ZONA 1: Hero/Galerie — imagine picture responsive
+         cerinta (0.05): figure, figcaption, picture, 3 variante
+    =========================================================== -->
+    <section id="galerie" class="zona-1">
+        <h2>NutriCore în Acțiune</h2>
+
+        <!-- Linia 258: figure + picture cu 3 variante responsive — cerinta (0.05) -->
+        <figure>
+            <picture>
+                <!-- Mobil (ecran mic, ≤640px): varianta redusa in bytes -->
+                <source media="(max-width: 640px)" srcset="resurse/img/hero-mic.svg">
+                <!-- Tableta (641px–1023px): varianta medie -->
+                <source media="(max-width: 1023px)" srcset="resurse/img/hero-mediu.svg">
+                <!-- Desktop (≥1024px): varianta mare — fallback img -->
+                <!-- title vizibil la hover — cerinta (0.05) -->
+                <img src="resurse/img/hero-mare.svg"
+                     alt="Colectie de suplimente NutriCore premium: proteine, creatina si vitamine"
+                     title="NutriCore — Cele mai bune suplimente pentru performanta sportiva"
+                     width="1200" height="600">
+            </picture>
+            <figcaption>
+                Gama completă <b>NutriCore</b>: <b>suplimente care chiar funcționează</b>
+                pentru orice obiectiv — masă musculară, slăbire sau energie maximă.
+            </figcaption>
+        </figure>
+
+        <!-- Linia 277: link care contine o imagine — la click se deschide versiunea mare -->
+        <!-- cerinta (0.1): link cu imagine -->
+        <p>
+            <a href="resurse/img/produs-whey-mare.svg">
+                <img src="resurse/img/produs-whey.svg"
+                     alt="Whey Protein Gold Standard — cel mai vandut produs NutriCore"
+                     title="Click pentru a vizualiza imaginea in dimensiune completa"
+                     width="300" height="300">
+            </a>
+        </p>
+
+        <!-- Linia 288: link download cu alt nume — cerinta (0.1) -->
+        <!-- Fisierul se numeste ghid-nutritie.txt dar se descarca cu alt nume -->
+        <p>
+            Descarcă ghidul nostru gratuit de nutriție sportivă:
+            <a href="resurse/ghid-nutritie.txt"
+               download="Ghid_Nutritie_NutriCore_2026.txt">
+                Ghid Complet de Nutriție Sportivă NutriCore (descărcare gratuită)
+            </a>
+        </p>
+
+    </section>
+    <!-- sfarsit section#galerie -->
+
+
+    <!-- ==========================================================
+         ZONA 3: Evenimente Calendar
+         cerinta (0.05): time cu datetime, lista ordonata, b pentru nume
+    =========================================================== -->
+    <section id="evenimente" class="zona-3">
+        <h2>Evenimente NutriCore</h2>
+        <p>
+            Rămâi la curent cu cele mai recente activități ale
+            <b>magazinului de nutritie sportiva</b> NutriCore.
+        </p>
+
+        <!-- Linia 309: ol cu evenimente, time+datetime, b pentru denumire -->
+        <ol>
+            <li>
+                <time datetime="2026-04-01T10:00">1 Aprilie 2026, ora 10:00</time> —
+                <b>Lansarea Noii Game Whey Premium 2026</b>: Prezentăm formula
+                îmbunătățită cu 30g <b>proteine pentru sala</b> pe porție.
+                Primii 50 de clienți primesc o mostră gratuită.
+            </li>
+            <li>
+                <time datetime="2026-04-15T18:30">15 Aprilie 2026, ora 18:30</time> —
+                <b>Webinar Gratuit: Nutritie Sportiva pentru Începători</b>:
+                Descoperă ce <b>suplimente care chiar funcționează</b> se potrivesc
+                obiectivului tău. Înregistrare prin email la contact@nutricore.ro.
+            </li>
+            <li>
+                <time datetime="2026-05-01">1 Mai 2026</time> —
+                <b>Flash Sale de Ziua Muncii</b>:
+                Reduceri de până la 40% la toată gama de <b>vitamine fitness online</b>.
+                Valabil 24 de ore, doar pe nutricore.ro!
+            </li>
+            <li>
+                <time datetime="2026-05-20T09:00">20 Mai 2026, ora 09:00</time> —
+                <b>NutriCore Challenge — 30 de Zile pentru Masă Musculară</b>:
+                Participă și câștigă un pachet de <b>cele mai bune suplimente</b>
+                în valoare de 500 Lei.
+            </li>
+            <li>
+                <time datetime="2026-06-10T17:00">10 Iunie 2026, ora 17:00</time> —
+                <b>Workshop de Nutriție Avansată</b>:
+                Seminar cu nutriționist certificat despre protocoale avansate de
+                <b>nutritie de incredere</b> pentru sportivi de performanță.
+            </li>
+        </ol>
+
+    </section>
+    <!-- sfarsit section#evenimente -->
+
+
+    <!-- ==========================================================
+         ZONA 2: Top Produse — Tabel
+         cerinta (0.1): table cu thead/tbody/tfoot, 5+ randuri,
+         4+ coloane, rowspan/colspan, caption
+    =========================================================== -->
+    <section id="top-produse" class="zona-2">
+        <h2>Top Produse Vândute</h2>
+        <p>
+            Alegerile confirmate de clienții <b>magazinului de nutritie sportiva</b>
+            NutriCore — <b>cele mai bune suplimente</b> din Trimestrul I, 2026.
+        </p>
+
+        <!-- Linia 355: tabel complet — cerinta (0.1) -->
+        <table>
+            <!-- Linia 357: caption — cerinta (0.1) -->
+            <caption>Clasamentul Celor Mai Vândute Produse NutriCore — Trimestrul I, 2026</caption>
+
+            <!-- Linia 360: thead cu th pentru coloane -->
+            <thead>
+                <tr>
+                    <th scope="col">Loc</th>
+                    <th scope="col">Produs</th>
+                    <th scope="col">Categorie</th>
+                    <th scope="col">Preț (Lei)</th>
+                    <th scope="col">Rating</th>
+                </tr>
+            </thead>
+
+            <!-- Linia 371: tbody cu 5 randuri -->
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Whey Protein Gold Standard 2 kg</td>
+                    <!-- Linia 376: rowspan=2 pentru categoria Proteine — cerinta (0.1) -->
+                    <td rowspan="2">Proteine</td>
+                    <td>289 Lei</td>
+                    <td>4.9 / 5 &#x2605;</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Isolate Pro Zero Sugar 900 g</td>
+                    <!-- celula lipseste (ocupata de rowspan) -->
+                    <td>199 Lei</td>
+                    <td>4.8 / 5 &#x2605;</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Creatină Monohydrat Pure 500 g</td>
+                    <td>Creatină</td>
+                    <td>79 Lei</td>
+                    <td>4.8 / 5 &#x2605;</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><abbr title="Branched-Chain Amino Acids">BCAA</abbr> 2:1:1 Instant Recovery 400 g</td>
+                    <td>Aminoacizi</td>
+                    <td>89 Lei</td>
+                    <td>4.7 / 5 &#x2605;</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Multivitamine Sport Complex 120 tablete</td>
+                    <td>Vitamine</td>
+                    <td>65 Lei</td>
+                    <td>4.6 / 5 &#x2605;</td>
+                </tr>
+            </tbody>
+
+            <!-- Linia 406: tfoot cu colspan — cerinta (0.1) -->
+            <tfoot>
+                <tr>
+                    <!-- colspan=3 pentru eticheta ce acopera 3 coloane -->
+                    <td colspan="3">Medie top 5 produse (Trimestrul I 2026)</td>
+                    <td>144.2 Lei</td>
+                    <td>4.76 / 5</td>
+                </tr>
+            </tfoot>
+        </table>
+
+    </section>
+    <!-- sfarsit section#top-produse -->
+
+
+    <!-- ==========================================================
+         SECTIUNEA 6: VIDEO — iframe YouTube
+         cerinta (0.05): iframe youtube embedded + div cu 3 linkuri
+    =========================================================== -->
+    <section id="video">
+        <h2>Ghiduri Video despre Nutriție Sportivă</h2>
+        <p>
+            Urmărești materialele noastre educative despre
+            <b>suplimentele care chiar funcționează</b>.
+        </p>
+
+        <!-- Linia 426: div cu 3 linkuri catre YouTube — toate se deschid in iframe -->
+        <!-- cerinta (0.05): minim 2 linkuri spre alte videoclipuri + 1 spre cel curent -->
+        <div>
+            <a href="https://www.youtube.com/embed/TZic-M8MNZM?start=1005&amp;autoplay=1"
+               target="video-nutritie">
+                &#9654; Ghid Creatină: Cum și Când să o Iei (alt videoclip)
+            </a>
+            |
+            <a href="https://www.youtube.com/embed/CPasUkas7Q4?start=512&amp;autoplay=1"
+               target="video-nutritie">
+                &#9654; Proteine Whey: Tot ce Trebuie să Știi (alt videoclip)
+            </a>
+            |
+            <a href="https://www.youtube.com/embed/mDhc1sAObVg"
+               target="video-nutritie">
+                &#9654; Nutriție Sportivă — videoclipul curent
+            </a>
+        </div>
+
+        <!-- Linia 444: iframe YouTube — cerinta (0.05) -->
+        <!-- name="video-nutritie" leaga iframe-ul de linkurile de mai sus -->
+        <iframe name="video-nutritie"
+                src="https://www.youtube.com/embed/mDhc1sAObVg?rel=0&amp;controls=1"
+                width="640"
+                height="360"
+                title="Ghiduri video NutriCore — Nutriție Sportivă"
+                allowfullscreen
+                loading="lazy">
+        </iframe>
+
+        <!-- Linia 454: Sectiune imbricata pentru playlist — BONUS (0.05) -->
+        <section id="playlist">
+            <h3>Playlist Educativ NutriCore</h3>
+            <p>
+                Toate videoclipurile noastre despre
+                <b>nutritia sportiva de incredere</b>,
+                redate automat în ordine (înlocuiește PLAYLIST_ID cu ID-ul real).
+            </p>
+            <!-- Bonus: playlist YouTube cu loop automat, cu butoane de control -->
+            <iframe
+                    src="https://www.youtube.com/embed/mDhc1sAObVg?playlist=TZic-M8MNZM,CPasUkas7Q4&amp;loop=1&amp;controls=1&amp;autoplay=0"
+                    width="640"
+                    height="360"
+                    title="Playlist NutriCore — Nutriție și Antrenament Sportiv"
+                    allowfullscreen
+                    loading="lazy">
+            </iframe>
+        </section>
+
+    </section>
+    <!-- sfarsit section#video -->
+
+
+    <!-- ==========================================================
+         ZONA 4: Statistici & Indicatori
+         cerinta (0.05): meter (min 2): unul cu valoare MICA, unul MARE
+    =========================================================== -->
+    <section id="statistici" class="zona-4">
+        <h2>Statistici și Indicatori NutriCore</h2>
+
+        <!-- Sectiune imbricata — h3 -->
+        <section id="stoc">
+            <h3>Stoc Disponibil — Whey Protein Gold Standard</h3>
+            <p>
+                Stoc curent: <b>8 bucăți</b> din 100 disponibile inițial.
+                <b>Grăbește-te — stoc critic!</b>
+            </p>
+            <!-- Linia 482: meter cu VALOARE MICA (value=8 sub low=20) — cerinta (0.05) -->
+            <meter min="0" max="100" low="20" high="70" optimum="80" value="8"
+                   title="Stoc disponibil Whey Protein Gold Standard">
+                8 din 100 bucăți disponibile
+            </meter>
+            <p><small>Stoc curent: 8/100 — sub limita critică (20)</small></p>
+        </section>
+
+        <!-- Sectiune imbricata — h3 -->
+        <section id="satisfactie">
+            <h3>Indicele de Satisfacție al Clienților</h3>
+            <p>
+                Calculat din peste <b>15.000 de recenzii</b> verificate ale clienților
+                <b>magazinului de nutritie sportiva</b> NutriCore.
+            </p>
+            <!-- Linia 496: meter cu VALOARE MARE (value=94 peste high=80) — cerinta (0.05) -->
+            <meter min="0" max="100" low="40" high="80" optimum="95" value="94"
+                   title="Indice satisfactie clienti NutriCore">
+                94 din 100 puncte — Excelent
+            </meter>
+            <p><small>Satisfacție: 94/100 — excelent, peste pragul ridicat (80)</small></p>
+        </section>
+
+    </section>
+    <!-- sfarsit section#statistici -->
+
+
+    <!-- ==========================================================
+         ZONA 5: Utilizatori Online (placeholder)
+         Rol: afiseaza activitatea in timp real pe platforma
+    =========================================================== -->
+    <section id="utilizatori-online" class="zona-5">
+        <h2>Utilizatori Online</h2>
+        <p>
+            <b>127 utilizatori activi</b> în acest moment pe
+            <b>magazinul de nutritie sportiva</b> NutriCore.
+        </p>
+        <ul>
+            <li>Vizitatori noi azi: <b>843</b></li>
+            <li>Comenzi în procesare: <b>12</b></li>
+            <li>Produse vizualizate astăzi: <b>1.204</b></li>
+        </ul>
+        <!-- meter cu valoare medie — complement la cele 2 din zona-4 -->
+        <meter min="0" max="500" low="50" high="400" optimum="200" value="127"
+               title="Utilizatori online simultan pe NutriCore">
+            127 din 500 utilizatori maximi simultanei
+        </meter>
+        <p><small>Capacitate server: 127/500 utilizatori simultan</small></p>
+    </section>
+    <!-- sfarsit section#utilizatori-online -->
+
+
+    <!-- ==========================================================
+         ZONA 6: Profilul Utilizatorului (placeholder)
+         Rol: date personalizate pentru utilizatorul autentificat
+    =========================================================== -->
+    <section id="date-utilizatori" class="zona-6">
+        <h2>Profilul Tău</h2>
+        <p>
+            Conectează-te pentru a accesa datele tale de nutriție
+            și istoricul comenzilor.
+        </p>
+        <dl>
+            <dt>Obiectiv</dt>
+            <dd>Masă Musculară</dd>
+
+            <dt>Nivel Activitate</dt>
+            <dd>Intermediar</dd>
+
+            <dt>Ultima Comandă</dt>
+            <dd><time datetime="2026-03-01">1 Martie 2026</time></dd>
+
+            <dt>Puncte Fidelitate</dt>
+            <dd><b>340</b> NutriPoints acumulate</dd>
+        </dl>
+    </section>
+    <!-- sfarsit section#date-utilizatori -->
+
+
+    <!-- ==========================================================
+         ZONA 7: Întrebări Frecvente / Info Site
+         cerinta (0.025): mai multe zone de details si summary
+    =========================================================== -->
+    <section id="intrebari" class="zona-7">
+        <h2>Întrebări Frecvente</h2>
+        <p>
+            Răspunsuri clare despre <b>suplimentele care chiar funcționează</b>
+            și <b>nutritia sportiva de incredere</b>.
+        </p>
+
+        <!-- Linia 515: details + summary — cerinta (0.025) -->
+        <details>
+            <summary>Ce proteine sunt recomandate pentru începători la sală?</summary>
+            <p>
+                Pentru început, un <b>Whey Concentrate</b> de calitate este alegerea perfectă.
+                Oferă un profil amino complet și reprezintă <b>proteine pentru sala la pret</b>
+                accesibil. Dozajul recomandat: 1 porție (30g) după antrenament.
+            </p>
+        </details>
+
+        <details>
+            <summary>Cum iau creatina corect?</summary>
+            <p>
+                <b>Creatina monohydrat</b> se poate lua cu sau fără faza de încărcare.
+                Doza de menținere: 3–5g/zi, zilnic. Nu este necesară ciclizarea —
+                un mit comun în lumea <b>nutritiei sportive</b>.
+            </p>
+        </details>
+
+        <details>
+            <summary>Sunt sigure suplimentele NutriCore?</summary>
+            <p>
+                Toate produsele noastre sunt testate de laboratoare independente certificate
+                <abbr title="Good Manufacturing Practice">GMP</abbr> și nu conțin substanțe
+                interzise conform listei
+                <abbr title="World Anti-Doping Agency">WADA</abbr>.
+            </p>
+        </details>
+
+        <details>
+            <summary>Există oferte speciale pentru vitamine fitness online?</summary>
+            <p>
+                Da! Abonații newsletterului primesc 10% reducere la prima comandă de
+                <b>vitamine fitness online</b>. La achiziții peste 200 Lei,
+                livrarea este gratuită.
+            </p>
+        </details>
+
+        <!-- Linia 551: link extern cu ID referentiat, text = URL, cu wbr — cerinta (0.1) -->
+        <p>
+            Informații științifice detaliate despre suplimentele sportive:
+            <a href="https://jissn.biomedcentral.com/articles/10.1186/s12970-017-0177-8#Sec5"
+               target="_blank" rel="noopener noreferrer">
+                https://jissn.biomedcentral.com/<wbr>articles/<wbr>10.1186/<wbr>s12970-017-0177-8/<wbr>#Sec5
+            </a>
+        </p>
+
+    </section>
+    <!-- sfarsit section#intrebari -->
+
+</div>
+<!-- sfarsit div.grid-pagina -->
+
+</main>
+
+
+<!-- ============================================================
+     FOOTER
+     cerinta (0.1): address cu tel, maps, email, whatsapp
+     cerinta (0.05): copyright cu small, &copy;, time cu datetime
+     cerinta (0.1): link catre inceputul paginii
+============================================================= -->
+<footer>
+
+    <!-- Linia 568: address cu date de contact — cerinta (0.1) -->
+    <address>
+        <!-- tel URI Scheme — cerinta (0.1) -->
+        <p>
+            <a href="tel:+40721000000">Telefon: 0721 000 000</a>
+        </p>
+
+        <!-- adresa cu Google Maps catre Facultatea de Matematica si Informatica — cerinta (0.1) -->
+        <!-- adresa pe mai multe randuri cu br — cerinta (0.1) -->
+        <p>
+            <a href="https://maps.google.com/?q=Facultatea+de+Matematica+si+Informatica,+Strada+Academiei+14,+Bucuresti"
+               target="_blank" rel="noopener noreferrer">
+                Str. Performanței, Nr. 1<br>
+                București, Sector 1<br>
+                010001, România
+            </a>
+        </p>
+
+        <!-- email URI Scheme — cerinta (0.1) -->
+        <p>
+            <a href="mailto:contact@nutricore.ro">Email: contact@nutricore.ro</a>
+        </p>
+
+        <!-- WhatsApp link — cerinta (0.1) -->
+        <p>
+            <a href="https://wa.me/40721000000" target="_blank" rel="noopener noreferrer">
+                Chat pe WhatsApp
+            </a>
+        </p>
+    </address>
+
+    <!-- Linia 598: iframe Google Maps — BONUS (0.05) -->
+    <!-- Locatia: Facultatea de Matematica si Informatica, Bucuresti -->
+    <iframe
+            src="https://maps.google.com/maps?q=Facultatea+de+Matematica+si+Informatica+Bucuresti&output=embed"
+            width="400"
+            height="200"
+            title="Locatia NutriCore — Facultatea de Matematica si Informatica, Bucuresti"
+            loading="lazy">
+    </iframe>
+
+    <!-- Linia 607: link catre inceputul paginii — cerinta (0.1) -->
+    <!-- Buton fix: cerc rotativ cu gradient, border dashed, sageata centrata, tooltip CSS -->
+    <a href="#sus" id="btn-top" aria-label="Urcă la începutul paginii">
+        <!-- Cercul care se roteste la hover -->
+        <span class="cerc-rotativ" aria-hidden="true"></span>
+        <!-- Sageata care ramane pe loc -->
+        <span class="sageata" aria-hidden="true">&#8593;</span>
+    </a>
+
+    <!-- Linia 612: copyright cu small, &copy;, time cu datetime — cerinta (0.05) -->
+    <small>
+        &copy; <time datetime="2026-03-16">16 Martie 2026</time>
+        NutriCore &#8212; Performanță și Nutriție. Toate drepturile rezervate.
+    </small>
+
+</footer>
+
+</body>
+</html>

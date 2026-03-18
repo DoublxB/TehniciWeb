@@ -1,0 +1,948 @@
+/* =====================================================
+   NutriCore — Foaie de Stiluri Principală (Etapa 2)
+
+   SCHEMA CROMATICĂ OFICIALĂ NUTRICORE
+   ─────────────────────────────────────────────────
+   Tip: "Dark Mode" cu contrast ridicat
+   Instrument: Adobe Color — armonie bazată pe contrast
+   
+   Motivul alegerii (Psihologia culorilor):
+     - Verde Lime (#A3E635): sănătate, regenerare, energie sportivă
+     - Negru Antracit (#111827): autoritate, premium, putere
+     - Alb Rece (#F9FAFB): lizibilitate maximă, curățenie, modernism
+     - Griurile (#374151, #1F2937): ierarhie vizuală, elevation, profunzime
+
+   CELE 5 CULORI PRINCIPALE (cerință Etapa 2):
+     C1: #A3E635 — Verde Lime / Electric (Highlight, CTA, accent)
+     C2: #111827 — Negru Antracit / Dark Navy (Background principal)
+     C3: #F9FAFB — Alb Rece (Text Principal)
+     C4: #374151 — Gri Închis (Borduri și Divizori)
+     C5: #1F2937 — Gri Petrol (Fundal Secundar / Surface)
+   ─────────────────────────────────────────────────
+   Structura Grid (ecran mare, >1024px):
+   ┌─────────────────────────────────────────┐
+   │          ZONA 1 — Hero/Galerie          │
+   ├─────────────┬───────────────────────────┤
+   │  ZONA 2     │                           │
+   │  (Tabel)    │       ZONA 8              │
+   ├──────┬──────┤    (Despre + Produse +    │
+   │  Z5  │  Z6  │       Video)              │
+   ├──────┼──────┼───────────────────────────┤
+   │  Z4  │  Z3  │       ZONA 7              │
+   ├──────┴──────┴───────────────────────────┤
+   │            VIDEO (full width)           │
+   └─────────────────────────────────────────┘
+===================================================== */
+
+
+/* =====================================================
+   1. VARIABILE — cele 5 culori + derivate utile
+   Definite pe :root pentru acces global
+
+   SCHEMA CROMATICĂ OFICIALĂ NUTRICORE:
+   Sursa: Adobe Color — armonie tip "Dark Mode" cu
+   contrast ridicat, generată pe baza culorii principale.
+===================================================== */
+:root {
+    /* Cele 5 culori principale ale schemei cromatice */
+    --c1-accent:    #A3E635;   /* C1 — Verde Lime / Electric (Highlight, CTA) */
+    --c2-fundal:    #111827;   /* C2 — Negru Antracit / Dark Navy (Background) */
+    --c3-text:      #F9FAFB;   /* C3 — Alb Rece (Text Principal) */
+    --c4-borduri:   #374151;   /* C4 — Gri Închis (Borduri și Divizori) */
+    --c5-surface:   #1F2937;   /* C5 — Gri Petrol (Fundal Secundar / Surface) */
+
+    /* Aliasuri descriptive care folosesc cele 5 culori de baza */
+    --culoare-accent:       var(--c1-accent);
+    --fundal-primar:        var(--c2-fundal);
+    --text-primar:          var(--c3-text);
+    --bordura:              var(--c4-borduri);
+    --fundal-secundar:      var(--c5-surface);
+
+    /* Derivate calculate din cele 5 culori */
+    --culoare-accent-hover: #87c41e;              /* C1 mai inchis pt hover */
+    --culoare-accent-rgb:   163, 230, 53;         /* valori RGB pt rgba() */
+    --fundal-card:          #1a2435;              /* intre C2 si C5 — pentru carduri */
+    --text-secundar:        #9CA3AF;              /* derivat din C4 — text auxiliar */
+    --culoare-eroare:       #FF4444;              /* stari de eroare/atentie */
+
+    /* Tipografie */
+    --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+
+    /* Spatiere */
+    --radius:    8px;
+    --radius-lg: 16px;
+
+    /* Tranzitie uniforma */
+    --tranzitie: 250ms ease;
+}
+
+
+/* =====================================================
+   2. RESET MINIMAL
+===================================================== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =====================================================
+   3. TIPOGRAFIE SCALABILĂ
+   Regula: font-size de baza scade 1-2px per breakpoint.
+   Tranzitia se aplica la schimbarea dimensiunii ferestrei.
+   Toate celelalte dimensiuni folosesc em/rem.
+===================================================== */
+html {
+    /* DESKTOP (>1024px): marimea de baza — 16px */
+    font-size: 16px;
+    /* Tranzitie smootha a dimensiunii textului la resize */
+    transition: font-size var(--tranzitie);
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font);
+    background-color: var(--fundal-primar);
+    color: var(--text-primar);
+    line-height: 1.65;
+    overflow-x: hidden;
+}
+
+/* Headinguri — in em (relative la dimensiunea curenta a parintelui) */
+h1 { font-size: 1.75em;  font-weight: 800; line-height: 1.2; }
+h2 { font-size: 1.35em;  font-weight: 700; line-height: 1.3; margin-bottom: 0.75em; color: var(--culoare-accent); }
+h3 { font-size: 1.15em;  font-weight: 600; line-height: 1.4; margin-bottom: 0.5em; }
+h4 { font-size: 1em;     font-weight: 600; line-height: 1.4; margin-bottom: 0.5em; }
+
+p {
+    margin-bottom: 0.875em;
+    font-size: 0.9375rem;   /* 15px din 16px baza */
+    line-height: 1.65;
+}
+p:last-child { margin-bottom: 0; }
+
+/* Taguri inline semantice */
+b    { color: var(--culoare-accent); font-weight: 700; }
+i    { color: var(--text-secundar); font-style: italic; }
+em   { font-style: italic; color: var(--culoare-accent); }
+s    { text-decoration: line-through; color: var(--text-secundar); opacity: 0.7; }
+ins  { text-decoration: none; color: #6ee7a0; border-bottom: 1px solid currentColor; }
+dfn  { font-style: normal; border-bottom: 2px dotted var(--culoare-accent); cursor: help; }
+abbr { border-bottom: 1px dotted var(--text-secundar); cursor: help; text-decoration: none; }
+q::before { content: '„'; color: var(--culoare-accent); }
+q::after  { content: '"'; color: var(--culoare-accent); }
+cite  { font-style: italic; color: var(--text-secundar); font-size: 0.875em; }
+time  { color: var(--culoare-accent); font-weight: 600; font-size: 0.875em; }
+small { font-size: 0.8em; color: var(--text-secundar); }
+
+strong {
+    display: block;
+    background-color: rgba(255, 68, 68, 0.08);
+    border-left: 4px solid var(--culoare-eroare);
+    padding: 0.75rem 1rem;
+    color: var(--culoare-eroare);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    margin: 1rem 0;
+    font-weight: 700;
+    font-size: 0.9em;
+}
+
+
+/* =====================================================
+   4. LINKURI
+===================================================== */
+a {
+    color: var(--culoare-accent);
+    text-decoration: none;
+    transition: opacity var(--tranzitie), color var(--tranzitie);
+}
+a:hover { opacity: 0.8; text-decoration: underline; }
+a:focus-visible {
+    outline: 2px solid var(--culoare-accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+
+/* =====================================================
+   5. IMAGINI
+===================================================== */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--radius);
+}
+
+
+/* =====================================================
+   6. HEADER — bara fixa sus
+===================================================== */
+header {
+    background-color: var(--fundal-secundar);
+    border-bottom: 2px solid var(--culoare-accent);
+    padding: 0 2rem;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
+}
+
+header h1 {
+    font-size: 1.2rem;
+    color: var(--culoare-accent);
+    white-space: nowrap;
+    flex-shrink: 0;
+    letter-spacing: -0.01em;
+}
+
+
+/* =====================================================
+   7. NAV — Meniu principal cu submeniu dropdown
+===================================================== */
+header nav {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+header nav > ul {
+    display: flex;
+    list-style: none;
+    gap: 0.2rem;
+    align-items: center;
+}
+
+header nav li { position: relative; }
+
+header nav a {
+    color: var(--text-primar);
+    padding: 0.45rem 0.875rem;
+    border-radius: var(--radius);
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: background-color var(--tranzitie), color var(--tranzitie);
+    text-decoration: none;
+}
+header nav a:hover {
+    background-color: var(--culoare-accent);
+    color: var(--fundal-primar);
+    text-decoration: none;
+    opacity: 1;
+}
+
+/* Submeniu */
+header nav li > ul {
+    display: none;
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 0;
+    background-color: var(--fundal-card);
+    border: 1px solid var(--bordura);
+    border-radius: var(--radius);
+    padding: 0.5rem;
+    min-width: 220px;
+    z-index: 300;
+    flex-direction: column;
+    gap: 0.2rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+}
+header nav li:hover > ul,
+header nav li:focus-within > ul { display: flex; }
+
+header nav li > ul a {
+    font-size: 0.8125rem;
+    padding: 0.375rem 0.75rem;
+    color: var(--text-secundar);
+}
+header nav li > ul a:hover {
+    color: var(--fundal-primar);
+    background-color: var(--culoare-accent);
+}
+
+
+/* =====================================================
+   8. MAIN
+===================================================== */
+main {
+    min-height: calc(100vh - 64px - 180px);
+}
+
+
+/* =====================================================
+   9. GRID PRINCIPAL — 8 zone + video
+   Structura vizuala pe ecran mare (>1024px):
+     coloana: 1fr 1fr 2fr (largime: 25% 25% 50%)
+     randuri:  auto (inaltimea se adapteaza la continut)
+===================================================== */
+.grid-pagina {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-areas:
+        "zona1 zona1 zona1"
+        "zona2 zona2 zona8"
+        "zona5 zona6 zona8"
+        "zona4 zona3 zona7"
+        "video video video";
+    gap: 1.25rem;
+    padding: 1.25rem;
+    max-width: 1440px;
+    margin: 0 auto;
+    /* Tranzitie la schimbarea layout-ului (resize) */
+    transition: gap var(--tranzitie), padding var(--tranzitie);
+}
+
+/* Asignarea fiecarei zone prin grid-area */
+.zona-1 { grid-area: zona1; }
+.zona-2 { grid-area: zona2; }
+.zona-3 { grid-area: zona3; }
+.zona-4 { grid-area: zona4; }
+.zona-5 { grid-area: zona5; }
+.zona-6 { grid-area: zona6; }
+.zona-7 { grid-area: zona7; }
+.zona-8 { grid-area: zona8; }
+#video  { grid-area: video;  }
+
+/* Stiluri comune pentru toate zonele gridului */
+.zona-1, .zona-2, .zona-3, .zona-4,
+.zona-5, .zona-6, .zona-7, .zona-8,
+#video {
+    background-color: var(--fundal-card);
+    border: 1px solid var(--bordura);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    overflow: hidden;
+    transition: border-color var(--tranzitie), box-shadow var(--tranzitie);
+}
+
+.zona-1:hover, .zona-2:hover, .zona-3:hover, .zona-4:hover,
+.zona-5:hover, .zona-6:hover, .zona-7:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =====================================================
+   10. STILURI SPECIFICE PE ZONE
+===================================================== */
+
+/* ZONA 1 — Hero/Galerie */
+.zona-1 {
+    background: linear-gradient(135deg, var(--fundal-secundar) 0%, #091526 100%);
+    border-color: rgba(163, 230, 53, 0.35);
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+}
+.zona-1 figure { margin: 0; flex: 1; }
+.zona-1 picture img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: var(--radius);
+}
+.zona-1 figcaption {
+    margin-top: 0.75rem;
+    color: var(--text-secundar);
+    font-size: 0.8125rem;
+    text-align: center;
+    line-height: 1.5;
+}
+.zona-1 > p { margin-top: 0.75rem; font-size: 0.875rem; }
+
+/* ZONA 8 — Conținut Divers (Despre + Produse + Video) */
+.zona-8 {
+    background-color: var(--fundal-secundar);
+    overflow-y: auto;
+    max-height: 820px;
+}
+/* Scrollbar subtil */
+.zona-8::-webkit-scrollbar { width: 5px; }
+.zona-8::-webkit-scrollbar-track { background: transparent; }
+.zona-8::-webkit-scrollbar-thumb {
+    background-color: var(--bordura);
+    border-radius: 3px;
+}
+/* Separare intre sectiunile din zona-8 */
+.zona-8 > section {
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--bordura);
+}
+.zona-8 > section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/* VIDEO — rand complet la baza gridului */
+#video {
+    background-color: var(--fundal-secundar);
+}
+#video > div {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+    padding-bottom: 0.875rem;
+    border-bottom: 1px solid var(--bordura);
+    align-items: center;
+}
+#video > div a {
+    font-size: 0.8125rem;
+    white-space: nowrap;
+}
+#video > iframe {
+    width: 100%;
+    max-width: 640px;
+    height: 360px;
+    border-radius: var(--radius);
+}
+
+/* ZONA 2 — Tabel (overflow horizontal pe ecrane mici) */
+.zona-2 { overflow-x: auto; }
+
+
+/* =====================================================
+   11. BLOCKQUOTE
+===================================================== */
+blockquote {
+    border-left: 4px solid var(--culoare-accent);
+    padding: 0.875rem 1.25rem;
+    background-color: rgba(163, 230, 53, 0.04);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    margin: 1rem 0;
+}
+
+
+/* =====================================================
+   12. DL — Lista de definitii
+===================================================== */
+dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.375rem 1rem;
+    margin: 0.75rem 0;
+}
+dt { font-weight: 700; color: var(--culoare-accent); font-size: 0.875em; }
+dd { color: var(--text-secundar); font-size: 0.875em; }
+
+
+/* =====================================================
+   13. LISTE OL/UL
+===================================================== */
+section ol,
+section ul {
+    padding-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+}
+section ol  { list-style: decimal; }
+section ul  { list-style: disc; }
+section ol li,
+section ul li {
+    color: var(--text-primar);
+    line-height: 1.6;
+    font-size: 0.875rem;
+}
+
+
+/* =====================================================
+   14. TABEL
+===================================================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8125rem;
+    min-width: 380px;
+}
+caption {
+    font-weight: 700;
+    color: var(--culoare-accent);
+    margin-bottom: 0.75rem;
+    text-align: left;
+    font-size: 0.8125rem;
+    line-height: 1.45;
+}
+thead th {
+    background-color: var(--fundal-secundar);
+    color: var(--culoare-accent);
+    padding: 0.625rem 0.75rem;
+    text-align: left;
+    border-bottom: 2px solid var(--culoare-accent);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+}
+tbody td,
+tfoot td {
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid var(--bordura);
+    color: var(--text-primar);
+    vertical-align: middle;
+}
+tbody tr:hover { background-color: rgba(163, 230, 53, 0.04); }
+tfoot td {
+    background-color: var(--fundal-secundar);
+    font-weight: 700;
+    color: var(--culoare-accent);
+    border-top: 2px solid var(--bordura);
+    font-size: 0.75rem;
+    border-bottom: none;
+}
+
+
+/* =====================================================
+   15. METER
+===================================================== */
+meter {
+    width: 100%;
+    height: 1rem;
+    display: block;
+    margin: 0.5rem 0;
+    border: none;
+    border-radius: var(--radius);
+    background: var(--fundal-secundar);
+    overflow: hidden;
+}
+meter::-webkit-meter-bar {
+    background: var(--fundal-secundar);
+    border: none;
+    border-radius: var(--radius);
+}
+meter::-webkit-meter-optimum-value      { background: var(--culoare-accent); border-radius: var(--radius); }
+meter::-webkit-meter-suboptimum-value   { background: #FFA726; border-radius: var(--radius); }
+meter::-webkit-meter-even-less-good-value { background: var(--culoare-eroare); border-radius: var(--radius); }
+
+
+/* =====================================================
+   16. DETAILS / SUMMARY — FAQ
+===================================================== */
+details {
+    border: 1px solid var(--bordura);
+    border-radius: var(--radius);
+    margin-bottom: 0.625rem;
+    overflow: hidden;
+    transition: border-color var(--tranzitie);
+}
+summary {
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    background-color: var(--fundal-secundar);
+    color: var(--text-primar);
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.875rem;
+    transition: background-color var(--tranzitie), color var(--tranzitie);
+    user-select: none;
+}
+summary::-webkit-details-marker { display: none; }
+summary::after {
+    content: '▾';
+    color: var(--culoare-accent);
+    font-size: 1rem;
+    transition: transform 250ms ease;
+    flex-shrink: 0;
+    margin-left: 0.5rem;
+}
+details[open] summary::after { transform: rotate(180deg); }
+summary:hover {
+    background-color: rgba(163, 230, 53, 0.08);
+    color: var(--culoare-accent);
+}
+details > *:not(summary) {
+    padding: 0.875rem 1rem;
+    font-size: 0.875rem;
+    color: var(--text-secundar);
+}
+details[open] > *:not(summary) { border-top: 1px solid var(--bordura); }
+
+
+/* =====================================================
+   17. MATHML
+===================================================== */
+math {
+    display: block;
+    color: var(--culoare-accent);
+    background-color: rgba(163, 230, 53, 0.05);
+    padding: 0.875rem 1rem;
+    border-radius: var(--radius);
+    margin: 0.875rem 0;
+    font-size: 1.1em;
+    overflow-x: auto;
+}
+
+
+/* =====================================================
+   18. HGROUP
+===================================================== */
+hgroup { margin-bottom: 1rem; }
+hgroup h2,
+hgroup h3,
+hgroup h4 { margin-bottom: 0.2rem; }
+hgroup p {
+    color: var(--text-secundar);
+    font-size: 0.875rem;
+    margin-bottom: 0;
+    line-height: 1.4;
+}
+
+
+/* =====================================================
+   19. PLAYLIST (section#playlist in zona-8)
+===================================================== */
+#playlist {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--bordura);
+}
+#playlist iframe {
+    width: 100%;
+    height: 280px;
+    margin-top: 0.75rem;
+    border: none;
+    border-radius: var(--radius);
+}
+
+
+/* =====================================================
+   20. FOOTER
+===================================================== */
+footer {
+    background-color: var(--fundal-secundar);
+    border-top: 1px solid var(--bordura);
+    padding: 2rem;
+    margin-top: 0;
+}
+
+address {
+    font-style: normal;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+address p {
+    font-size: 0.875rem;
+    margin-bottom: 0;
+}
+address a {
+    color: var(--text-secundar);
+    transition: color var(--tranzitie);
+    text-decoration: none;
+}
+address a:hover {
+    color: var(--culoare-accent);
+    text-decoration: none;
+    opacity: 1;
+}
+
+footer iframe {
+    border: none;
+    border-radius: var(--radius);
+    display: block;
+    margin-bottom: 1.5rem;
+    max-width: 100%;
+}
+
+footer > p { margin: 1rem 0; }
+footer > p > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: 0.875rem;
+    background-color: var(--fundal-card);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--bordura);
+    transition: border-color var(--tranzitie), background-color var(--tranzitie);
+}
+footer > p > a:hover {
+    border-color: var(--culoare-accent);
+    background-color: rgba(163, 230, 53, 0.08);
+    text-decoration: none;
+    opacity: 1;
+}
+
+footer small {
+    display: block;
+    color: var(--text-secundar);
+    font-size: 0.8rem;
+    border-top: 1px solid var(--bordura);
+    padding-top: 1.25rem;
+    margin-top: 1.25rem;
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   21. IFRAME (generic)
+===================================================== */
+iframe {
+    border: none;
+    border-radius: var(--radius);
+    max-width: 100%;
+}
+
+
+/* ╔═══════════════════════════════════════════════════╗
+   ║   RESPONSIVE BREAKPOINTS                         ║
+   ╚═══════════════════════════════════════════════════╝ */
+
+/* =====================================================
+   22. TABLETA — ecran mediu (≤1024px)
+   Font: 15px (−1px față de desktop)
+   Layout: 2 coloane, zona-8 full-width
+===================================================== */
+@media (max-width: 1024px) {
+    html {
+        /* Tableta: −1px față de 16px desktop → 15px */
+        font-size: 15px;
+    }
+
+    .grid-pagina {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "zona1 zona1"
+            "zona8 zona8"
+            "zona2 zona2"
+            "zona3 zona5"
+            "zona6 zona7"
+            "zona4 zona4"
+            "video video";
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .zona-8 {
+        /* Pe tableta zona-8 se afiseaza full-width, fara scroll */
+        max-height: none;
+        overflow-y: visible;
+    }
+
+    header { padding: 0 1.25rem; }
+
+    #video > iframe,
+    #playlist iframe {
+        max-width: 100%;
+    }
+}
+
+/* =====================================================
+   23. MOBIL — ecran mic (≤640px)
+   Font: 14px (−1px față de tableta)
+   Layout: 1 coloana, toate zonele stivuite vertical
+===================================================== */
+@media (max-width: 640px) {
+    html {
+        /* Mobil: −1px față de 15px tableta → 14px */
+        font-size: 14px;
+    }
+
+    .grid-pagina {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "zona1"
+            "zona8"
+            "zona2"
+            "zona3"
+            "zona4"
+            "zona5"
+            "zona6"
+            "zona7"
+            "video";
+        gap: 0.75rem;
+        padding: 0.75rem;
+    }
+
+    /* Header adaptat pe mobil */
+    header {
+        height: auto;
+        padding: 0.75rem 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    header h1 { font-size: 1.1rem; }
+    header nav > ul {
+        flex-wrap: wrap;
+        gap: 0.2rem;
+    }
+    header nav a {
+        font-size: 0.8125rem;
+        padding: 0.375rem 0.625rem;
+    }
+    /* Submeniu ascuns pe mobil (ecranul e prea mic) */
+    header nav li > ul { display: none !important; }
+
+    /* Zona-8 fara scroll pe mobil */
+    .zona-8 {
+        max-height: none;
+        overflow-y: visible;
+    }
+
+    /* Imagini hero mai mici pe mobil */
+    .zona-1 picture img { height: 160px; }
+
+    /* Iframe-uri proportionale pe mobil */
+    #video > iframe { height: 210px; }
+    #playlist iframe { height: 200px; }
+    footer iframe { height: 180px; }
+
+    footer { padding: 1.25rem; }
+    address { grid-template-columns: 1fr; }
+
+    table { font-size: 0.75rem; }
+
+    /* Previne overflow la tabel */
+    .zona-2 { padding: 1rem 0.75rem; }
+
+    /* Buton top: tooltip aparent deasupra pe mobil */
+    #btn-top::after {
+        right: auto;
+        left: 50%;
+        top: auto;
+        bottom: calc(100% + 0.625rem);
+        transform: translateX(-50%);
+    }
+
+    /* Buton top: putin mai mic pe mobil */
+    #btn-top {
+        width: 48px;
+        height: 48px;
+        bottom: 1.25rem;
+        right: 1.25rem;
+    }
+}
+
+
+/* =====================================================
+   BUTON BACK-TO-TOP — poziție fixă
+   ─────────────────────────────────────────────────
+   Structura:
+   <a id="btn-top">
+     <span class="cerc-rotativ">  ← se roteste
+     <span class="sageata">↑</span>  ← sta pe loc
+   </a>
+   
+   Cerinte implementate:
+   ✓ Pozitie fixa (jos-dreapta)
+   ✓ Gradient dark→light→dark pe cerc
+   ✓ Border dashed accent
+   ✓ Sageata centrata, ramane nemiscata
+   ✓ Cercul se roteste la hover, revine invers
+   ✓ Tranzitie 500ms
+   ✓ Tooltip CSS personalizat la hover
+   ✓ Semi-transparent (opacity) → opac la hover
+===================================================== */
+
+/* ── Container principal ── */
+#btn-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 500;
+
+    width: 56px;
+    height: 56px;
+    display: block;
+
+    /* Semi-transparent normal, opac la hover */
+    opacity: 0.5;
+    transition: opacity 500ms ease;
+    text-decoration: none;
+}
+
+#btn-top:hover {
+    opacity: 1;
+    text-decoration: none;
+}
+
+/* ── Cercul rotativ ── */
+.cerc-rotativ {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+
+    /* Gradient: culoare inchisa → mai deschisa → aceeasi culoare inchisa */
+    background: linear-gradient(
+        180deg,
+        var(--fundal-primar)   0%,
+        var(--bordura)         50%,
+        var(--fundal-primar)   100%
+    );
+
+    /* Border liniat (dashed) in culoarea de accent */
+    border: 2px dashed var(--culoare-accent);
+
+    /* Stare initiala — fara rotatie */
+    transform: rotate(0deg);
+
+    /* Tranzitie pe transform: la hover se roteste inainte,
+       la parasire revine prin rotire inversa (360→0 = invers) */
+    transition: transform 500ms ease;
+}
+
+#btn-top:hover .cerc-rotativ {
+    /* Rotire completa la hover */
+    transform: rotate(360deg);
+}
+
+/* ── Săgeata — rămâne nemișcată ── */
+.sageata {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--culoare-accent);
+    font-size: 1.375rem;
+    font-weight: 700;
+    line-height: 1;
+
+    /* Nu poate fi eveniment de click (parintele e linkul) */
+    pointer-events: none;
+}
+
+/* ── Tooltip CSS ── */
+#btn-top::after {
+    content: 'Urcă la începutul paginii';
+
+    /* Pozitionat in stanga butonului */
+    position: absolute;
+    right: calc(100% + 0.875rem);
+    top: 50%;
+    transform: translateY(-50%);
+
+    /* Stil tooltip */
+    background-color: var(--fundal-secundar);
+    color: var(--text-primar);
+    border: 1px solid var(--bordura);
+    border-radius: var(--radius);
+    padding: 0.375rem 0.75rem;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    font-family: var(--font);
+
+    /* Invizibil implicit, apare la hover */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 400ms ease;
+}
+
+#btn-top:hover::after {
+    opacity: 1;
+}

@@ -1,0 +1,136 @@
+/* =====================================================
+   NutriCore — Variabile CSS (Custom Properties)
+   
+   De ce variabile CSS?
+   - Modificare centralizată a temei (un singur loc)
+   - Cod mai ușor de citit și menținut
+   - Suport nativ în browsere moderne
+   - Pot fi modificate dinamic cu JavaScript (ex: dark mode)
+====================================================== */
+
+:root {
+    /* ======================================================
+       SCHEMA CROMATICĂ OFICIALĂ NUTRICORE (Adobe Color)
+       Tip: Dark Mode cu contrast ridicat
+       ======================================================
+
+       C1 — Verde Lime / Electric  → Highlight, CTA, accent
+       C2 — Negru Antracit / Navy  → Fundal principal
+       C3 — Alb Rece               → Text principal
+       C4 — Gri Închis             → Borduri și divizori
+       C5 — Gri Petrol / Surface   → Fundal secundar, carduri
+       ====================================================== */
+
+    /* === CULORI PRINCIPALE (Schema Oficială) === */
+    --culoare-accent:        #A3E635;   /* C1 — Verde Lime Electric — brand, CTA */
+    --culoare-accent-hover:  #87c41e;   /* C1 derivat — hover mai închis */
+    --culoare-accent-rgb:    163, 230, 53; /* C1 în format RGB pentru rgba() */
+
+    /* === FUNDALURI === */
+    --fundal-primar:         #111827;   /* C2 — Negru Antracit / Dark Navy */
+    --fundal-secundar:       #1F2937;   /* C5 — Gri Petrol / Surface */
+    --fundal-card:           #1a2435;   /* Derivat — între C2 și C5 */
+    --fundal-card-hover:     #1F2937;   /* C5 pe hover */
+    --fundal-input:          #1F2937;   /* C5 — Fundal câmpuri formular */
+    --fundal-header:         #111827;   /* C2 — Header solid */
+
+    /* === TEXTE === */
+    --text-primar:           #F9FAFB;   /* C3 — Alb Rece — text principal */
+    --text-secundar:         #9CA3AF;   /* Derivat C4 — text auxiliar (Tailwind gray-400) */
+    --text-terțiar:          #6B7280;   /* Derivat C4 — subtitluri discrete */
+    --text-pe-accent:        #111827;   /* C2 — Text întunecat pe butoane lime */
+
+    /* === BORDURI === */
+    --bordura:               #374151;   /* C4 — Gri Închis — borduri principale */
+    --bordura-hover:         #4B5563;   /* C4 derivat — borduri pe hover */
+    --bordura-accent:        #A3E635;   /* C1 — Borduri accentuate */
+
+    /* === STĂRI === */
+    --culoare-succes:        #4CAF50;
+    --culoare-eroare:        #FF4444;
+    --culoare-avertizare:    #FFA726;
+    --culoare-info:          #29B6F6;
+
+    /* === BADGE-URI PRODUS === */
+    --badge-bestseller:      #A3E635;   /* C1 */
+    --badge-nou:             #29B6F6;
+    --badge-promo:           #FF4444;
+    --badge-text:            #111827;   /* C2 */
+
+    /* === TIPOGRAFIE === */
+    --font-primar:   'Segoe UI', system-ui, -apple-system, sans-serif;
+    --font-mono:     'Consolas', 'Courier New', monospace;
+
+    /* Scări de dimensiuni tipografice */
+    --text-xs:   0.75rem;     /* 12px */
+    --text-sm:   0.875rem;    /* 14px */
+    --text-base: 1rem;        /* 16px */
+    --text-lg:   1.125rem;    /* 18px */
+    --text-xl:   1.25rem;     /* 20px */
+    --text-2xl:  1.5rem;      /* 24px */
+    --text-3xl:  1.875rem;    /* 30px */
+    --text-4xl:  2.25rem;     /* 36px */
+    --text-5xl:  3rem;        /* 48px */
+    --text-6xl:  3.75rem;     /* 60px */
+
+    /* Grosimi font */
+    --font-normal:    400;
+    --font-medium:    500;
+    --font-semibold:  600;
+    --font-bold:      700;
+    --font-extrabold: 800;
+
+    /* Line heights */
+    --lh-tight:  1.25;
+    --lh-normal: 1.5;
+    --lh-relaxed: 1.625;
+
+    /* === SPAȚIERE === */
+    --spatiu-1:  0.25rem;   /* 4px */
+    --spatiu-2:  0.5rem;    /* 8px */
+    --spatiu-3:  0.75rem;   /* 12px */
+    --spatiu-4:  1rem;      /* 16px */
+    --spatiu-5:  1.25rem;   /* 20px */
+    --spatiu-6:  1.5rem;    /* 24px */
+    --spatiu-8:  2rem;      /* 32px */
+    --spatiu-10: 2.5rem;    /* 40px */
+    --spatiu-12: 3rem;      /* 48px */
+    --spatiu-16: 4rem;      /* 64px */
+    --spatiu-20: 5rem;      /* 80px */
+    --spatiu-24: 6rem;      /* 96px */
+
+    /* === LAYOUT === */
+    --container-max:    1200px;
+    --container-padding: 1rem;
+
+    /* === BORDER RADIUS === */
+    --radius-sm:   4px;
+    --radius-md:   8px;
+    --radius-lg:   12px;
+    --radius-xl:   16px;
+    --radius-2xl:  24px;
+    --radius-full: 9999px;
+
+    /* === UMBRE === */
+    --umbra-sm:  0 1px 3px rgba(0,0,0,0.4);
+    --umbra-md:  0 4px 12px rgba(0,0,0,0.5);
+    --umbra-lg:  0 8px 24px rgba(0,0,0,0.6);
+    --umbra-xl:  0 16px 40px rgba(0,0,0,0.7);
+    --umbra-accent: 0 0 20px rgba(163, 230, 53, 0.2);
+
+    /* === TRANZIȚII === */
+    --tranzitie-rapida:  150ms ease;
+    --tranzitie-normala: 250ms ease;
+    --tranzitie-lenta:   400ms ease;
+
+    /* === ÎNĂLȚIMI FIXE === */
+    --inaltime-header: 70px;
+    --inaltime-header-mobil: 60px;
+
+    /* === Z-INDEX === */
+    --z-dropdown:  100;
+    --z-header:    200;
+    --z-modal:     300;
+    --z-toast:     400;
+    --z-overlay:   500;
+}

@@ -1,0 +1,157 @@
+/* =====================================================
+   NutriCore — Footer
+====================================================== */
+
+.footer {
+    background-color: var(--fundal-secundar);
+    border-top: 1px solid var(--bordura);
+    margin-top: var(--spatiu-16);
+}
+
+.footer__inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spatiu-8);
+    padding-top: var(--spatiu-12);
+    padding-bottom: var(--spatiu-12);
+}
+
+@media (min-width: 640px) {
+    .footer__inner { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+    .footer__inner { grid-template-columns: 2fr 1fr 1fr 1.5fr; }
+}
+
+/* Coloana Brand */
+.footer__coloana--brand .footer__logo {
+    margin-bottom: var(--spatiu-4);
+}
+
+.footer__descriere {
+    font-size: var(--text-sm);
+    color: var(--text-secundar);
+    line-height: var(--lh-relaxed);
+    margin-bottom: var(--spatiu-5);
+    max-width: 280px;
+}
+
+/* Navigație footer */
+.footer__titlu-coloana {
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-primar);
+    margin-bottom: var(--spatiu-4);
+}
+
+.footer__lista {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spatiu-2);
+}
+
+.footer__link {
+    font-size: var(--text-sm);
+    color: var(--text-secundar);
+    transition: color var(--tranzitie-rapida);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spatiu-2);
+}
+
+.footer__link:hover {
+    color: var(--culoare-accent);
+    padding-left: var(--spatiu-1);
+}
+
+/* Adresă contact footer */
+.footer__adresa {
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spatiu-3);
+}
+
+.footer__adresa p {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spatiu-2);
+    font-size: var(--text-sm);
+    color: var(--text-secundar);
+}
+
+.footer__adresa .icon--mic {
+    margin-top: 2px;
+    flex-shrink: 0;
+    color: var(--culoare-accent);
+}
+
+.footer__program {
+    font-size: var(--text-xs) !important;
+    color: var(--text-terțiar) !important;
+    margin-top: var(--spatiu-1);
+}
+
+/* Social links */
+.footer__social {
+    display: flex;
+    gap: var(--spatiu-3);
+}
+
+.social__link {
+    width: 38px;
+    height: 38px;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--bordura);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secundar);
+    transition: all var(--tranzitie-rapida);
+}
+
+.social__link:hover {
+    border-color: var(--culoare-accent);
+    color: var(--culoare-accent);
+    background-color: rgba(var(--culoare-accent-rgb), 0.1);
+    transform: translateY(-2px);
+}
+
+.social__link--mare {
+    width: auto;
+    padding: var(--spatiu-2) var(--spatiu-4);
+    border-radius: var(--radius-md);
+    gap: var(--spatiu-2);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+}
+
+/* Bara de jos footer */
+.footer__bar-jos {
+    border-top: 1px solid var(--bordura);
+    padding: var(--spatiu-5) 0;
+}
+
+.footer__bar-jos-inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spatiu-2);
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .footer__bar-jos-inner {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+}
+
+.footer__copyright,
+.footer__disclaimer {
+    font-size: var(--text-xs);
+    color: var(--text-terțiar);
+}

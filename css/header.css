@@ -1,0 +1,352 @@
+/* =====================================================
+   NutriCore — Header & Navigație
+   Strategie: mobile-first, hamburger menu pe mobil,
+   navigație orizontală pe desktop
+====================================================== */
+
+/* === HEADER PRINCIPAL === */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: var(--z-header);
+    background-color: var(--fundal-header);
+    border-bottom: 1px solid var(--bordura);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--inaltime-header-mobil);
+    gap: var(--spatiu-4);
+}
+
+@media (min-width: 1024px) {
+    .header__inner { height: var(--inaltime-header); }
+}
+
+/* === LOGO === */
+
+.header__logo,
+.footer__logo {
+    display: flex;
+    align-items: center;
+    gap: var(--spatiu-2);
+    flex-shrink: 0;
+    text-decoration: none;
+}
+
+.logo__icon {
+    width: 36px;
+    height: 36px;
+    background-color: var(--culoare-accent);
+    color: var(--text-pe-accent);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: var(--font-extrabold);
+    font-size: var(--text-lg);
+    flex-shrink: 0;
+}
+
+.logo__text {
+    font-size: var(--text-xl);
+    font-weight: var(--font-semibold);
+    color: var(--text-primar);
+    letter-spacing: -0.02em;
+}
+
+.logo__text strong {
+    color: var(--culoare-accent);
+}
+
+/* === NAVIGAȚIE DESKTOP === */
+
+.header__nav {
+    display: none;
+    flex: 1;
+    justify-content: center;
+}
+
+@media (min-width: 1024px) {
+    .header__nav { display: flex; }
+}
+
+.nav__lista {
+    display: flex;
+    align-items: center;
+    gap: var(--spatiu-1);
+}
+
+.nav__item {
+    position: relative;
+}
+
+.nav__link {
+    display: flex;
+    align-items: center;
+    gap: var(--spatiu-1);
+    padding: var(--spatiu-2) var(--spatiu-3);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--text-secundar);
+    border-radius: var(--radius-md);
+    transition: color var(--tranzitie-rapida), background-color var(--tranzitie-rapida);
+    white-space: nowrap;
+}
+
+.nav__link:hover,
+.nav__item--activ .nav__link {
+    color: var(--text-primar);
+    background-color: var(--fundal-card);
+}
+
+.nav__item--activ .nav__link {
+    color: var(--culoare-accent);
+}
+
+.nav__arrow {
+    font-size: 0.65em;
+    transition: transform var(--tranzitie-rapida);
+}
+
+/* === SUBMENIU DROPDOWN === */
+
+.nav__submeniu {
+    position: absolute;
+    top: calc(100% + var(--spatiu-2));
+    left: 0;
+    min-width: 200px;
+    background-color: var(--fundal-card);
+    border: 1px solid var(--bordura);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--umbra-xl);
+    padding: var(--spatiu-2);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: all var(--tranzitie-normala);
+    z-index: var(--z-dropdown);
+}
+
+.nav__item--dropdown:hover .nav__submeniu,
+.nav__item--dropdown:focus-within .nav__submeniu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.nav__item--dropdown:hover .nav__arrow {
+    transform: rotate(180deg);
+}
+
+.submeniu__link {
+    display: block;
+    padding: var(--spatiu-2) var(--spatiu-3);
+    font-size: var(--text-sm);
+    color: var(--text-secundar);
+    border-radius: var(--radius-md);
+    transition: all var(--tranzitie-rapida);
+    white-space: nowrap;
+}
+
+.submeniu__link:hover {
+    background-color: var(--fundal-secundar);
+    color: var(--culoare-accent);
+    padding-left: var(--spatiu-4);
+}
+
+.submeniu__link--toate {
+    margin-top: var(--spatiu-1);
+    padding-top: var(--spatiu-2);
+    border-top: 1px solid var(--bordura);
+    color: var(--culoare-accent);
+    font-weight: var(--font-semibold);
+}
+
+/* === UTILITĂȚI HEADER === */
+
+.header__utilitati {
+    display: flex;
+    align-items: center;
+    gap: var(--spatiu-2);
+}
+
+.btn-icon {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secundar);
+    border-radius: var(--radius-md);
+    transition: all var(--tranzitie-rapida);
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+.btn-icon:hover,
+.btn-icon--activ {
+    color: var(--culoare-accent);
+    background-color: var(--fundal-card);
+}
+
+/* Contor coș */
+.cos__contor {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    min-width: 18px;
+    height: 18px;
+    background-color: var(--culoare-accent);
+    color: var(--text-pe-accent);
+    font-size: 10px;
+    font-weight: var(--font-bold);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+    line-height: 1;
+}
+
+/* === HAMBURGER (mobil) === */
+
+.btn-hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 0;
+}
+
+@media (min-width: 1024px) {
+    .btn-hamburger { display: none; }
+}
+
+.hamburger__linie {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-primar);
+    border-radius: 2px;
+    transition: all var(--tranzitie-normala);
+    transform-origin: center;
+}
+
+/* Animație hamburger → X */
+.btn-hamburger[aria-expanded="true"] .hamburger__linie:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+.btn-hamburger[aria-expanded="true"] .hamburger__linie:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+.btn-hamburger[aria-expanded="true"] .hamburger__linie:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* === MENIU MOBIL (nav deschis) === */
+
+@media (max-width: 1023px) {
+    .header__nav {
+        display: none;
+        position: fixed;
+        top: var(--inaltime-header-mobil);
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: var(--fundal-primar);
+        padding: var(--spatiu-6);
+        overflow-y: auto;
+        border-top: 1px solid var(--bordura);
+    }
+
+    .header__nav.deschis {
+        display: block;
+    }
+
+    .nav__lista {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spatiu-1);
+    }
+
+    .nav__link {
+        font-size: var(--text-lg);
+        width: 100%;
+        padding: var(--spatiu-3) var(--spatiu-4);
+    }
+
+    .nav__submeniu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        border: none;
+        background-color: var(--fundal-card);
+        border-radius: var(--radius-md);
+        margin-top: var(--spatiu-1);
+        padding: var(--spatiu-2);
+    }
+
+    .nav__item--dropdown:not(.deschis) .nav__submeniu {
+        display: none;
+    }
+}
+
+/* === BARA CĂUTARE === */
+
+.header__cautare {
+    background-color: var(--fundal-secundar);
+    border-top: 1px solid var(--bordura);
+    padding: var(--spatiu-4) 0;
+}
+
+.form-cautare {
+    display: flex;
+    gap: var(--spatiu-3);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-cautare__input {
+    flex: 1;
+    background-color: var(--fundal-input);
+    border: 1px solid var(--bordura);
+    border-radius: var(--radius-full);
+    color: var(--text-primar);
+    padding: var(--spatiu-3) var(--spatiu-5);
+    font-size: var(--text-base);
+}
+
+.form-cautare__input:focus {
+    outline: none;
+    border-color: var(--culoare-accent);
+}
+
+.form-cautare__buton {
+    background-color: var(--culoare-accent);
+    color: var(--text-pe-accent);
+    border-radius: var(--radius-full);
+    padding: var(--spatiu-3) var(--spatiu-5);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border: none;
+}
+
+.form-cautare__buton:hover {
+    background-color: var(--culoare-accent-hover);
+}

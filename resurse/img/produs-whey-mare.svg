@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600">
+  <rect width="600" height="600" fill="#1A1A1A" rx="16"/>
+  <rect x="150" y="60" width="300" height="480" rx="20" fill="#A8FF3E"/>
+  <text x="300" y="280" font-family="Arial" font-size="28" font-weight="bold"
+        text-anchor="middle" fill="#0D0D0D">WHEY PROTEIN</text>
+  <text x="300" y="315" font-family="Arial" font-size="20"
+        text-anchor="middle" fill="#0D0D0D">Gold Standard</text>
+  <text x="300" y="350" font-family="Arial" font-size="16"
+        text-anchor="middle" fill="#0D0D0D">2 kg | 24g proteină / porție</text>
+  <text x="300" y="390" font-family="Arial" font-size="14"
+        text-anchor="middle" fill="#0D0D0D">⭐ 4.9 / 5 — 328 recenzii</text>
+  <text x="300" y="560" font-family="Arial" font-size="12"
+        text-anchor="middle" fill="#666">Imagine mărită (600px)</text>
+</svg>
