@@ -9,7 +9,20 @@
 
 
 
-## Structura Proiectului
+## Compilare SASS (meniu Etapa 3)
+
+După modificări în `scss/nav.scss`:
+
+```bash
+npm install
+npm run build:css
+```
+
+Rezultat: `css/nav.css` (folosit de toate paginile).
+
+---
+
+## Structura Proiectului (documentație inițială — planificare)
 
 ```
 nutricore/
@@ -43,6 +56,31 @@ nutricore/
 └── assets/
     ├── img/                # Imagini produse, hero, blog
     └── icons/              # Iconuri SVG
+```
+
+### Structura actuală (Etapa 3 — repo)
+
+```
+nutricore/
+├── index.html                 # Pagina principală (conținut Etapa 1–2)
+├── magazin.html               # Placeholder — legat din meniu
+├── blog.html
+├── contact.html
+├── galerie-statica.html
+├── galerie-dinamica.html
+├── package.json               # npm run build:css → compilează SASS meniu
+├── scss/
+│   └── nav.scss               # Sursă SASS meniu Etapa 3 → css/nav.css
+├── js/
+│   └── nav.js                 # Hamburger / meniu mobil
+├── css/
+│   ├── reset.css, variables.css, style.css, nav.css, print.css
+│   ├── global.css, header.css, footer.css
+├── resurse/
+│   ├── ico/                   # favicon, manifest
+│   ├── img/                   # imagini / SVG-uri pagină
+│   └── ghid-nutritie.txt
+└── node_modules/              # (după npm install; opțional în git)
 ```
 
 ---
@@ -106,7 +144,7 @@ nutricore/
 | ✅ **Etapa 0** | Planificare, structură, documentație | **Finalizat** |
 | ✅ **Etapa 1** | Structura HTML semantic — index.html complet | **Finalizat** |
 | ✅ **Etapa 2** | Design CSS: schema cromatică, grid 8 zone, responsive | **Finalizat** |
-| ⏳ **Etapa 3** | JavaScript (coș, filtre, validări, animații) | Urmează |
+| ✅ **Etapa 3** | Meniu SASS (dropdown, responsive, hamburger), print CSS | **Finalizat** |
 | ⏳ **Etapa 4** | Testare, optimizare, validare W3C | Urmează |
 
 ---
@@ -157,6 +195,22 @@ nutricore/
 - [x] Flexbox: header, nav, elemente UI liniare
 - [x] Fără overflow nedorit (tabel scroll orizontal unde e cazul)
 
+### Etapa 3 — Meniu navigare & tipărire
 
+**Fișiere:** `scss/nav.scss` (sursă SASS) → compilat în `css/nav.css` (`npm run build:css`); `css/print.css`; `js/nav.js`.
 
-*Ultima actualizare: Etapa 2 — Design CSS & Layout Grid*
+- [x] **Meniu (`variante-meniu`):** `<nav>` + `<ul>` + `<a>`; iconițe **Font Awesome** la fiecare opțiune principală
+- [x] **Două submeniuri:** (1) **Acasă** → legături către secțiuni în `index.html`; (2) **Galerii** → `galerie-statica.html`, `galerie-dinamica.html`
+- [x] **SASS:** imbricare (nesting), `@extend` (hover submeniu), `@for` (întârzieri animație bare hamburger), variabile temă pe **`body`**
+- [x] **Desktop:** hover principal — `::after` cu gradient în 2 culori care „alunecă”; submeniu cu **scaleY** (origine sus centru); hover în submeniu schimbă fundal + text
+- [x] **Tabletă (mediu):** text ascuns pe itemii principali, rămân iconițele; font mai mic
+- [x] **Mobil:** hamburger din **3 `<span>`** (fără imagini), bare poziționate absolut; animație la apariție (culoare + transform + opacitate, min. 3 keyframes); întârzieri succesive cu **`@for`** în SASS; meniu deschis cu **rotație + opacitate**; Acasă — doar iconiță casă; fără gradient slide pe mobil (doar fundal + text la hover)
+- [x] **Pagini legate:** `index.html`, `magazin.html`, `blog.html`, `contact.html`, `galerie-statica.html`, `galerie-dinamica.html` — același header/meniu
+- [x] **Print (`css-printare`):** `@media print` — banner „Acesta este un proiect școlar!” (dreapta sus, border dublu negru, 50% lățime); ascundere imagini, video, iframe, figcaption, `#btn-top`; grid → `block`; linkuri ca text negru fără subliniere; **H1** centrat; meniu listă verticală; **page-break** după meniu și înainte de footer; **filigran** nume (2 rânduri), 60% × 10vh, culoare `rgba(0,0,0,0.3)`; **`@page :left` / `:right`** margini 2cm / 1cm
+- [x] **Bonus hamburger:** bare animate + `@for` pentru delay
+
+> **Notă:** În `index.html` și în filigran, înlocuiește „Prenume” / „Nume” cu datele tale pentru tipărire.
+
+---
+
+*Ultima actualizare: Etapa 3 — Meniu SASS & print*

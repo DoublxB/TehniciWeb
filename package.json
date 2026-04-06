@@ -1,0 +1,12 @@
+{
+  "name": "nutricore",
+  "private": true,
+  "description": "Proiect Tehnici Web — NutriCore",
+  "scripts": {
+    "build:css": "sass scss/nav.scss css/nav.css --style=expanded --no-source-map",
+    "watch:css": "sass scss/nav.scss css/nav.css --watch --style=expanded --no-source-map"
+  },
+  "devDependencies": {
+    "sass": "^1.69.0"
+  }
+}

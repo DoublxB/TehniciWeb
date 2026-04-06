@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Student Tehnici Web — NutriCore">
+    <meta name="description" content="Galerie dinamică NutriCore.">
+    <meta name="msapplication-TileColor" content="#A3E635">
+    <link rel="icon" type="image/png" href="resurse/ico/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="resurse/ico/favicon.svg">
+    <title>Galerie dinamică | NutriCore</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/print.css" media="print">
+</head>
+<body>
+<div class="filigran-print" aria-hidden="true">
+    <span class="filigran-print__linie1">Prenume</span>
+    <span class="filigran-print__linie2">Nume</span>
+</div>
+<header id="sus" class="header-site">
+    <button type="button" class="hamburger" id="btn-meniu" aria-label="Deschide sau închide meniul" aria-expanded="false" aria-controls="nav-principal">
+        <span class="hamburger__bar"></span>
+        <span class="hamburger__bar"></span>
+        <span class="hamburger__bar"></span>
+    </button>
+    <h1>NutriCore – Performanță și Nutriție</h1>
+    <nav class="nav-principal" id="nav-principal" aria-label="Navigare principală NutriCore">
+        <ul>
+            <li class="nav-item nav-item--has-submenu">
+                <a href="index.html" class="nav-link--principal"><i class="fa-solid fa-house" aria-hidden="true"></i><span class="nav-text nav-text--acasa">Acasă</span></a>
+                <ul class="submenu">
+                    <li><a href="index.html#despre">Despre NutriCore</a></li>
+                    <li><a href="index.html#produse">Produsele Noastre</a></li>
+                    <li><a href="index.html#galerie">Galerie</a></li>
+                    <li><a href="index.html#evenimente">Evenimente</a></li>
+                    <li><a href="index.html#top-produse">Top Produse</a></li>
+                    <li><a href="index.html#video">Videoclipuri</a></li>
+                    <li><a href="index.html#statistici">Statistici</a></li>
+                    <li><a href="index.html#intrebari">Întrebări Frecvente</a></li>
+                </ul>
+            </li>
+            <li class="nav-item nav-item--has-submenu">
+                <a href="galerie-statica.html" class="nav-link--principal"><i class="fa-solid fa-images" aria-hidden="true"></i><span class="nav-text">Galerii</span></a>
+                <ul class="submenu">
+                    <li><a href="galerie-statica.html">Galerie statică</a></li>
+                    <li><a href="galerie-dinamica.html">Galerie dinamică</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="magazin.html" class="nav-link--simplu"><i class="fa-solid fa-store" aria-hidden="true"></i><span class="nav-text">Magazin</span></a></li>
+            <li class="nav-item"><a href="blog.html" class="nav-link--simplu"><i class="fa-solid fa-newspaper" aria-hidden="true"></i><span class="nav-text">Blog &amp; Ghiduri</span></a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link--simplu"><i class="fa-solid fa-address-card" aria-hidden="true"></i><span class="nav-text">Contact &amp; Povestea Mea</span></a></li>
+        </ul>
+    </nav>
+</header>
+<main class="pagina-secundara">
+    <section>
+        <h2>Galerie dinamică</h2>
+        <p>Galerie cu conținut încărcat dinamic — va fi implementată cu JavaScript în etapele următoare.</p>
+    </section>
+</main>
+<footer>
+    <p class="banner-scolar">Acesta este un proiect școlar!</p>
+    <address>
+        <p><a href="tel:+40721000000">Telefon: 0721 000 000</a></p>
+        <p><a href="mailto:contact@nutricore.ro">Email: contact@nutricore.ro</a></p>
+    </address>
+    <a href="#sus" id="btn-top" aria-label="Urcă la începutul paginii"><span class="cerc-rotativ" aria-hidden="true"></span><span class="sageata" aria-hidden="true">&#8593;</span></a>
+    <small>&copy; <time datetime="2026-03-16">16 Martie 2026</time> NutriCore</small>
+</footer>
+<script src="js/nav.js" defer></script>
+</body>
+</html>

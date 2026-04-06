@@ -176,97 +176,7 @@ img {
 }
 
 
-/* =====================================================
-   6. HEADER — bara fixa sus
-===================================================== */
-header {
-    background-color: var(--fundal-secundar);
-    border-bottom: 2px solid var(--culoare-accent);
-    padding: 0 2rem;
-    height: 64px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-    position: sticky;
-    top: 0;
-    z-index: 200;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
-}
-
-header h1 {
-    font-size: 1.2rem;
-    color: var(--culoare-accent);
-    white-space: nowrap;
-    flex-shrink: 0;
-    letter-spacing: -0.01em;
-}
-
-
-/* =====================================================
-   7. NAV — Meniu principal cu submeniu dropdown
-===================================================== */
-header nav {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-}
-
-header nav > ul {
-    display: flex;
-    list-style: none;
-    gap: 0.2rem;
-    align-items: center;
-}
-
-header nav li { position: relative; }
-
-header nav a {
-    color: var(--text-primar);
-    padding: 0.45rem 0.875rem;
-    border-radius: var(--radius);
-    display: block;
-    font-size: 0.875rem;
-    font-weight: 500;
-    white-space: nowrap;
-    transition: background-color var(--tranzitie), color var(--tranzitie);
-    text-decoration: none;
-}
-header nav a:hover {
-    background-color: var(--culoare-accent);
-    color: var(--fundal-primar);
-    text-decoration: none;
-    opacity: 1;
-}
-
-/* Submeniu */
-header nav li > ul {
-    display: none;
-    position: absolute;
-    top: calc(100% + 0.5rem);
-    left: 0;
-    background-color: var(--fundal-card);
-    border: 1px solid var(--bordura);
-    border-radius: var(--radius);
-    padding: 0.5rem;
-    min-width: 220px;
-    z-index: 300;
-    flex-direction: column;
-    gap: 0.2rem;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
-}
-header nav li:hover > ul,
-header nav li:focus-within > ul { display: flex; }
-
-header nav li > ul a {
-    font-size: 0.8125rem;
-    padding: 0.375rem 0.75rem;
-    color: var(--text-secundar);
-}
-header nav li > ul a:hover {
-    color: var(--fundal-primar);
-    background-color: var(--culoare-accent);
-}
+/* Header + navigare: vezi css/nav.css (Etapa 3 — compilat din scss/nav.scss) */
 
 
 /* =====================================================
@@ -274,6 +184,18 @@ header nav li > ul a:hover {
 ===================================================== */
 main {
     min-height: calc(100vh - 64px - 180px);
+}
+
+/* Pagini secundare (fara grid Etapa 2) */
+main.pagina-secundara {
+    min-height: calc(100vh - 120px);
+    padding: 2rem 1.25rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+main.pagina-secundara h2 {
+    margin-bottom: 1rem;
 }
 
 
@@ -767,25 +689,8 @@ iframe {
         padding: 0.75rem;
     }
 
-    /* Header adaptat pe mobil */
-    header {
-        height: auto;
-        padding: 0.75rem 1rem;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-    }
-    header h1 { font-size: 1.1rem; }
-    header nav > ul {
-        flex-wrap: wrap;
-        gap: 0.2rem;
-    }
-    header nav a {
-        font-size: 0.8125rem;
-        padding: 0.375rem 0.625rem;
-    }
-    /* Submeniu ascuns pe mobil (ecranul e prea mic) */
-    header nav li > ul { display: none !important; }
+    /* Header: detalii in css/nav.css (meniu hamburger) */
+    .header-site h1 { font-size: 1.1rem; }
 
     /* Zona-8 fara scroll pe mobil */
     .zona-8 {
