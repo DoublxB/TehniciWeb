@@ -1,113 +1,4 @@
-<!DOCTYPE html>
-<!-- Linia 1: DOCTYPE + lang="ro" — cerinta (0.025) -->
-<html lang="ro">
-<head>
-    <!-- Linia 5: meta charset — cerinta (0.05) -->
-    <meta charset="UTF-8">
-    <!-- Linia 7: meta viewport — buna practica, nu e in lista celor 4 obligatorii -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Linia 9: meta author — cerinta (0.05) -->
-    <meta name="author" content="Student Tehnici Web — NutriCore Performanta si Nutritie">
-    <!-- Linia 11: meta keywords (cuvinte cheie din Etapa 0) — cerinta (0.05) -->
-    <meta name="keywords" content="suplimente care chiar functioneaza, proteine pentru sala pret, magazin nutritie sportiva, vitamine fitness online, cele mai bune suplimente, nutritie de incredere, creatina, aminoacizi, bcaa, zer izolat, suplimente sportive">
-    <!-- Linia 13: meta description — cerinta (0.05) -->
-    <meta name="description" content="NutriCore — Suplimentele tale de performanta, nutritie de incredere. Magazin nutritie sportiva cu proteine, creatina, vitamine si aminoacizi care chiar functioneaza.">
-    <!-- Linia 15: msapplication-TileColor — cerinta favicon (0.025) -->
-    <meta name="msapplication-TileColor" content="#A3E635">
-    <!-- Linia 17-24: Favicon generat cu RealFaviconGenerator — cerinta (0.025) -->
-    <link rel="icon" type="image/png" href="resurse/ico/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/svg+xml" href="resurse/ico/favicon.svg">
-    <link rel="shortcut icon" href="resurse/ico/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="resurse/ico/apple-touch-icon.png">
-    <link rel="manifest" href="resurse/ico/site.webmanifest">
 
-    <!-- Linia 26: title — cerinta (0.05) -->
-    <title>NutriCore – Performanță și Nutriție | Magazin Suplimente Sportive</title>
-
-    <!-- Etapa 2: Foi de stiluri CSS -->
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/style.css">
-    <!-- Etapa 3: meniu (SASS compilat) + Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <link rel="stylesheet" href="css/nav.css">
-    <link rel="stylesheet" href="css/print.css" media="print">
-</head>
-<body>
-
-<!-- Filigran tiparire (nume — inlocuieste in HTML pentru proiect) -->
-<div class="filigran-print" aria-hidden="true">
-    <span class="filigran-print__linie1">Prenume</span>
-    <span class="filigran-print__linie2">Nume</span>
-</div>
-
-<!-- ============================================================
-     HEADER — Etapa 1 + Etapa 3: meniu dropdown, iconite FA, submeniuri
-============================================================= -->
-<header id="sus" class="header-site">
-    <button type="button" class="hamburger" id="btn-meniu" aria-label="Deschide sau închide meniul" aria-expanded="false" aria-controls="nav-principal">
-        <span class="hamburger__bar"></span>
-        <span class="hamburger__bar"></span>
-        <span class="hamburger__bar"></span>
-    </button>
-    <h1>NutriCore – Performanță și Nutriție</h1>
-
-    <nav class="nav-principal" id="nav-principal" aria-label="Navigare principală NutriCore">
-        <ul>
-            <!-- Submeniu 1: sectiuni in pagina Acasa (index.html) -->
-            <li class="nav-item nav-item--has-submenu">
-                <a href="index.html" class="nav-link--principal">
-                    <i class="fa-solid fa-house" aria-hidden="true"></i>
-                    <span class="nav-text nav-text--acasa">Acasă</span>
-                </a>
-                <ul class="submenu">
-                    <li><a href="index.html#despre">Despre NutriCore</a></li>
-                    <li><a href="index.html#produse">Produsele Noastre</a></li>
-                    <li><a href="index.html#galerie">Galerie</a></li>
-                    <li><a href="index.html#evenimente">Evenimente</a></li>
-                    <li><a href="index.html#top-produse">Top Produse</a></li>
-                    <li><a href="index.html#video">Videoclipuri</a></li>
-                    <li><a href="index.html#statistici">Statistici</a></li>
-                    <li><a href="index.html#intrebari">Întrebări Frecvente</a></li>
-                </ul>
-            </li>
-            <!-- Submeniu 2: alte pagini (galerii) -->
-            <li class="nav-item nav-item--has-submenu">
-                <a href="galerie-statica.html" class="nav-link--principal">
-                    <i class="fa-solid fa-images" aria-hidden="true"></i>
-                    <span class="nav-text">Galerii</span>
-                </a>
-                <ul class="submenu">
-                    <li><a href="galerie-statica.html">Galerie statică</a></li>
-                    <li><a href="galerie-dinamica.html">Galerie dinamică</a></li>
-                </ul>
-            </li>
-            <li class="nav-item">
-                <a href="magazin.html" class="nav-link--simplu">
-                    <i class="fa-solid fa-store" aria-hidden="true"></i>
-                    <span class="nav-text">Magazin</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="blog.html" class="nav-link--simplu">
-                    <i class="fa-solid fa-newspaper" aria-hidden="true"></i>
-                    <span class="nav-text">Blog &amp; Ghiduri</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="contact.html" class="nav-link--simplu">
-                    <i class="fa-solid fa-address-card" aria-hidden="true"></i>
-                    <span class="nav-text">Contact &amp; Povestea Mea</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</header>
-
-<!-- ============================================================
-     MAIN — continut principal
-============================================================= -->
-<main>
 
 <!-- Grid principal: cuprinde tot continutul din main (cerinta Etapa 2) -->
 <div class="grid-pagina">
@@ -343,12 +234,12 @@
         <figure>
             <picture>
                 <!-- Mobil (ecran mic, ≤640px): varianta redusa in bytes -->
-                <source media="(max-width: 640px)" srcset="resurse/img/hero-mic.svg">
+                <source media="(max-width: 640px)" srcset="/resurse/img/hero-mic.svg">
                 <!-- Tableta (641px–1023px): varianta medie -->
-                <source media="(max-width: 1023px)" srcset="resurse/img/hero-mediu.svg">
+                <source media="(max-width: 1023px)" srcset="/resurse/img/hero-mediu.svg">
                 <!-- Desktop (≥1024px): varianta mare — fallback img -->
                 <!-- title vizibil la hover — cerinta (0.05) -->
-                <img src="resurse/img/hero-mare.svg"
+                <img src="/resurse/img/hero-mare.svg"
                      alt="Colectie de suplimente NutriCore premium: proteine, creatina si vitamine"
                      title="NutriCore — Cele mai bune suplimente pentru performanta sportiva"
                      width="1200" height="600">
@@ -362,8 +253,8 @@
         <!-- Linia 277: link care contine o imagine — la click se deschide versiunea mare -->
         <!-- cerinta (0.1): link cu imagine -->
         <p>
-            <a href="resurse/img/produs-whey-mare.svg">
-                <img src="resurse/img/produs-whey.svg"
+            <a href="/resurse/img/produs-whey-mare.svg">
+                <img src="/resurse/img/produs-whey.svg"
                      alt="Whey Protein Gold Standard — cel mai vandut produs NutriCore"
                      title="Click pentru a vizualiza imaginea in dimensiune completa"
                      width="300" height="300">
@@ -374,7 +265,7 @@
         <!-- Fisierul se numeste ghid-nutritie.txt dar se descarca cu alt nume -->
         <p>
             Descarcă ghidul nostru gratuit de nutriție sportivă:
-            <a href="resurse/ghid-nutritie.txt"
+            <a href="/resurse/ghid-nutritie.txt"
                download="Ghid_Nutritie_NutriCore_2026.txt">
                 Ghid Complet de Nutriție Sportivă NutriCore (descărcare gratuită)
             </a>
@@ -576,6 +467,21 @@
             </iframe>
         </section>
 
+        <!-- Etapa 4 — video-vtt: surse multiple, subtitluri, poster, preload none -->
+        <section class="video-html5-etapa4" aria-labelledby="video-demo-titlu">
+            <h3 id="video-demo-titlu">Video demonstrativ (subtitluri RO / EN)</h3>
+            <p>Format MP4 și WebM, subtitluri cu stil în VTT (fundal transparent, text alb, umbră neagră). Subtitlurile RO sunt implicite.</p>
+            <div class="video-wrap">
+                <video class="video-responsive" poster="/resurse/img/video-poster-nutricore.svg" controls preload="none" playsinline>
+                    <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+                    <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm">
+                    <track kind="subtitles" src="/resurse/video/subtitluri-ro.vtt" srclang="ro" label="Română" default>
+                    <track kind="subtitles" src="/resurse/video/subtitluri-en.vtt" srclang="en" label="English">
+                    Browserul tău nu suportă redarea video HTML5.
+                </video>
+            </div>
+        </section>
+
     </section>
     <!-- sfarsit section#video -->
 
@@ -656,6 +562,7 @@
             Conectează-te pentru a accesa datele tale de nutriție
             și istoricul comenzilor.
         </p>
+        <p class="ip-vizitator">Adresa IP (vizitator): <strong><%= clientIp %></strong></p>
         <dl>
             <dt>Obiectiv</dt>
             <dd>Masă Musculară</dd>
@@ -737,78 +644,3 @@
 </div>
 <!-- sfarsit div.grid-pagina -->
 
-</main>
-
-
-<!-- ============================================================
-     FOOTER
-     cerinta (0.1): address cu tel, maps, email, whatsapp
-     cerinta (0.05): copyright cu small, &copy;, time cu datetime
-     cerinta (0.1): link catre inceputul paginii
-============================================================= -->
-<footer>
-
-    <!-- Etapa 3 print: banner proiect scolar (vizibil la tiparire) -->
-    <p class="banner-scolar">Acesta este un proiect școlar!</p>
-
-    <!-- Linia 568: address cu date de contact — cerinta (0.1) -->
-    <address>
-        <!-- tel URI Scheme — cerinta (0.1) -->
-        <p>
-            <a href="tel:+40721000000">Telefon: 0721 000 000</a>
-        </p>
-
-        <!-- adresa cu Google Maps catre Facultatea de Matematica si Informatica — cerinta (0.1) -->
-        <!-- adresa pe mai multe randuri cu br — cerinta (0.1) -->
-        <p>
-            <a href="https://maps.google.com/?q=Facultatea+de+Matematica+si+Informatica,+Strada+Academiei+14,+Bucuresti"
-               target="_blank" rel="noopener noreferrer">
-                Str. Performanței, Nr. 1<br>
-                București, Sector 1<br>
-                010001, România
-            </a>
-        </p>
-
-        <!-- email URI Scheme — cerinta (0.1) -->
-        <p>
-            <a href="mailto:contact@nutricore.ro">Email: contact@nutricore.ro</a>
-        </p>
-
-        <!-- WhatsApp link — cerinta (0.1) -->
-        <p>
-            <a href="https://wa.me/40721000000" target="_blank" rel="noopener noreferrer">
-                Chat pe WhatsApp
-            </a>
-        </p>
-    </address>
-
-    <!-- Linia 598: iframe Google Maps — BONUS (0.05) -->
-    <!-- Locatia: Facultatea de Matematica si Informatica, Bucuresti -->
-    <iframe
-            src="https://maps.google.com/maps?q=Facultatea+de+Matematica+si+Informatica+Bucuresti&output=embed"
-            width="400"
-            height="200"
-            title="Locatia NutriCore — Facultatea de Matematica si Informatica, Bucuresti"
-            loading="lazy">
-    </iframe>
-
-    <!-- Linia 607: link catre inceputul paginii — cerinta (0.1) -->
-    <!-- Buton fix: cerc rotativ cu gradient, border dashed, sageata centrata, tooltip CSS -->
-    <a href="#sus" id="btn-top" aria-label="Urcă la începutul paginii">
-        <!-- Cercul care se roteste la hover -->
-        <span class="cerc-rotativ" aria-hidden="true"></span>
-        <!-- Sageata care ramane pe loc -->
-        <span class="sageata" aria-hidden="true">&#8593;</span>
-    </a>
-
-    <!-- Linia 612: copyright cu small, &copy;, time cu datetime — cerinta (0.05) -->
-    <small>
-        &copy; <time datetime="2026-03-16">16 Martie 2026</time>
-        NutriCore &#8212; Performanță și Nutriție. Toate drepturile rezervate.
-    </small>
-
-</footer>
-
-<script src="js/nav.js" defer></script>
-</body>
-</html>

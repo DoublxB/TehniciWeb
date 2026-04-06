@@ -1,0 +1,17 @@
+WEBVTT
+
+STYLE
+::cue {
+  background-color: transparent;
+  color: #ffffff;
+  text-shadow: 2px 2px 0 #000000;
+}
+
+00:00:00.000 --> 00:00:03.000 line:8% position:50% align:center
+Welcome to NutriCore — English subtitles.
+
+00:00:00.000 --> 00:00:03.000 line:92% position:50% align:center
+Protein, creatine and training energy.
+
+00:00:03.500 --> 00:00:06.500
+Third line: hydration matters for recovery.

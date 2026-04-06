@@ -851,3 +851,68 @@ iframe {
 #btn-top:hover::after {
     opacity: 1;
 }
+
+/* =====================================================
+   Etapa 4 — stilizare-linkuri (doar în <main>, nu în nav)
+   ===================================================== */
+main a:visited {
+    color: var(--link-vizitat);
+}
+
+main a[href^="http"]::before {
+    content: "\27A5";
+    font-size: 1.5em;
+    margin-right: 0.15em;
+    display: inline-block;
+    transition: color var(--tranzitie-normala);
+    vertical-align: middle;
+    line-height: 1;
+}
+
+main a[href^="http"]:hover::before {
+    color: var(--culoare-accent);
+}
+
+main a:not([href^="http"]) {
+    background-image: radial-gradient(
+        circle at center,
+        var(--culoare-accent) 0%,
+        var(--culoare-accent) 40%,
+        transparent 80%,
+        transparent 100%
+    );
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 0 0;
+    transition: background-size var(--tranzitie-lenta);
+}
+
+main a:not([href^="http"]):hover {
+    background-size: 100% 100%;
+}
+
+main a:active {
+    outline: 2px solid var(--culoare-accent);
+    outline-offset: 2px;
+}
+
+/* Etapa 4 — video-vtt: responsive */
+.video-wrap {
+    max-width: 960px;
+    margin: 1rem auto;
+}
+
+.video-responsive {
+    width: 100%;
+    min-width: 240px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--radius);
+    border: 1px solid var(--bordura);
+}
+
+.ip-vizitator {
+    font-size: 0.95rem;
+    color: var(--text-secundar);
+}

@@ -1,10 +1,26 @@
 {
   "name": "nutricore",
+  "version": "1.0.0",
   "private": true,
-  "description": "Proiect Tehnici Web — NutriCore",
+  "description": "Proiect Tehnici Web — NutriCore: magazin suplimente sportive (Express + EJS)",
+  "keywords": [
+    "nutricore",
+    "suplimente",
+    "fitness",
+    "tehnici-web",
+    "express",
+    "ejs"
+  ],
+  "author": "Student Tehnici Web",
+  "main": "index.js",
   "scripts": {
-    "build:css": "sass scss/nav.scss css/nav.css --style=expanded --no-source-map",
-    "watch:css": "sass scss/nav.scss css/nav.css --watch --style=expanded --no-source-map"
+    "start": "node index.js",
+    "build:css": "sass scss/nav.scss resurse/css/nav.css --style=expanded --no-source-map",
+    "watch:css": "sass scss/nav.scss resurse/css/nav.css --watch --style=expanded --no-source-map"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.0"
   },
   "devDependencies": {
     "sass": "^1.69.0"

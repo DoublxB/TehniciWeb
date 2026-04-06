@@ -98,6 +98,10 @@
         text-decoration: none !important;
     }
 
+    main a::before {
+        content: none !important;
+    }
+
     .header-site h1 {
         text-align: center;
         width: 100%;

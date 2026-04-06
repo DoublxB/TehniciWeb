@@ -9,16 +9,25 @@
 
 
 
+## Pornire server (Etapa 4)
+
+```bash
+npm install
+npm run build:css
+npm start
+```
+
+Server Express pe **port 8080**: [http://localhost:8080](http://localhost:8080) — rute: `/`, `/index`, `/home` (pagina principală EJS), `/magazin`, `/blog`, etc.
+
 ## Compilare SASS (meniu Etapa 3)
 
 După modificări în `scss/nav.scss`:
 
 ```bash
-npm install
 npm run build:css
 ```
 
-Rezultat: `css/nav.css` (folosit de toate paginile).
+Rezultat: `resurse/css/nav.css`.
 
 ---
 
@@ -58,29 +67,24 @@ nutricore/
     └── icons/              # Iconuri SVG
 ```
 
-### Structura actuală (Etapa 3 — repo)
+### Structura actuală (Etapa 3–4 — repo)
 
 ```
 nutricore/
-├── index.html                 # Pagina principală (conținut Etapa 1–2)
-├── magazin.html               # Placeholder — legat din meniu
-├── blog.html
-├── contact.html
-├── galerie-statica.html
-├── galerie-dinamica.html
-├── package.json               # npm run build:css → compilează SASS meniu
-├── scss/
-│   └── nav.scss               # Sursă SASS meniu Etapa 3 → css/nav.css
-├── js/
-│   └── nav.js                 # Hamburger / meniu mobil
-├── css/
-│   ├── reset.css, variables.css, style.css, nav.css, print.css
-│   ├── global.css, header.css, footer.css
+├── index.js                   # Server Express (port 8080)
+├── erori.json                 # Mesaje și imagini pentru pagini de eroare
+├── package.json
+├── views/
+│   ├── fragmente/             # head, header, footer, filigran (EJS)
+│   └── pagini/                # index.ejs, magazin, blog, eroare, despre-noi, …
+├── scss/nav.scss              # → compilat în resurse/css/nav.css
 ├── resurse/
-│   ├── ico/                   # favicon, manifest
-│   ├── img/                   # imagini / SVG-uri pagină
+│   ├── css/                   # reset, variables, style, nav, print
+│   ├── js/nav.js
+│   ├── img/, ico/, video/     # resurse statice (subfoldere pe tip)
 │   └── ghid-nutritie.txt
-└── node_modules/              # (după npm install; opțional în git)
+├── temp/, logs/, backup/, fisiere_uploatate/   # create la start (în .gitignore)
+└── node_modules/
 ```
 
 ---
@@ -145,7 +149,8 @@ nutricore/
 | ✅ **Etapa 1** | Structura HTML semantic — index.html complet | **Finalizat** |
 | ✅ **Etapa 2** | Design CSS: schema cromatică, grid 8 zone, responsive | **Finalizat** |
 | ✅ **Etapa 3** | Meniu SASS (dropdown, responsive, hamburger), print CSS | **Finalizat** |
-| ⏳ **Etapa 4** | Testare, optimizare, validare W3C | Urmează |
+| ✅ **Etapa 4** | Node.js + Express + EJS, erori din JSON, resurse statice, video VTT, linkuri | **Finalizat** |
+| ⏳ **Etapa 5** | Testare, optimizare, validare W3C | Urmează |
 
 ---
 
@@ -197,7 +202,7 @@ nutricore/
 
 ### Etapa 3 — Meniu navigare & tipărire
 
-**Fișiere:** `scss/nav.scss` (sursă SASS) → compilat în `css/nav.css` (`npm run build:css`); `css/print.css`; `js/nav.js`.
+**Fișiere:** `scss/nav.scss` (sursă SASS) → compilat în `resurse/css/nav.css` (`npm run build:css`); `resurse/css/print.css`; `resurse/js/nav.js`.
 
 - [x] **Meniu (`variante-meniu`):** `<nav>` + `<ul>` + `<a>`; iconițe **Font Awesome** la fiecare opțiune principală
 - [x] **Două submeniuri:** (1) **Acasă** → legături către secțiuni în `index.html`; (2) **Galerii** → `galerie-statica.html`, `galerie-dinamica.html`
@@ -205,12 +210,33 @@ nutricore/
 - [x] **Desktop:** hover principal — `::after` cu gradient în 2 culori care „alunecă”; submeniu cu **scaleY** (origine sus centru); hover în submeniu schimbă fundal + text
 - [x] **Tabletă (mediu):** text ascuns pe itemii principali, rămân iconițele; font mai mic
 - [x] **Mobil:** hamburger din **3 `<span>`** (fără imagini), bare poziționate absolut; animație la apariție (culoare + transform + opacitate, min. 3 keyframes); întârzieri succesive cu **`@for`** în SASS; meniu deschis cu **rotație + opacitate**; Acasă — doar iconiță casă; fără gradient slide pe mobil (doar fundal + text la hover)
-- [x] **Pagini legate:** `index.html`, `magazin.html`, `blog.html`, `contact.html`, `galerie-statica.html`, `galerie-dinamica.html` — același header/meniu
+- [x] **Pagini legate (Etapa 4: rute Express):** `/`, `/magazin`, `/blog`, `/contact`, `/galerie-statica`, `/galerie-dinamica`, `/despre-noi` — același header/meniu (EJS)
 - [x] **Print (`css-printare`):** `@media print` — banner „Acesta este un proiect școlar!” (dreapta sus, border dublu negru, 50% lățime); ascundere imagini, video, iframe, figcaption, `#btn-top`; grid → `block`; linkuri ca text negru fără subliniere; **H1** centrat; meniu listă verticală; **page-break** după meniu și înainte de footer; **filigran** nume (2 rânduri), 60% × 10vh, culoare `rgba(0,0,0,0.3)`; **`@page :left` / `:right`** margini 2cm / 1cm
 - [x] **Bonus hamburger:** bare animate + `@for` pentru delay
 
-> **Notă:** În `index.html` și în filigran, înlocuiește „Prenume” / „Nume” cu datele tale pentru tipărire.
+> **Notă:** În `views/fragmente/filigran.ejs` și în filigran, înlocuiește „Prenume” / „Nume” cu datele tale pentru tipărire.
+
+### Etapa 4 — Node.js, Express, EJS
+
+**Fișiere:** `index.js`, `erori.json`, `views/pagini/*.ejs`, `views/fragmente/*.ejs`; resurse în `resurse/` servite la `/resurse/...`.
+
+- [x] Proiect `npm` cu **express** și **ejs**; server în `index.js`, port **8080**
+- [x] Afișare la consolă: `__dirname`, `__filename`, `process.cwd()` (întrebare teoretică: nu sunt mereu identice)
+- [x] Foldere `views/pagini` și `views/fragmente`; `include` pentru head, header, footer
+- [x] Pagina principală în `pagini/index.ejs`; fragmente pentru head comun și navigare
+- [x] Resurse statice: `app.use('/resurse', express.static(...))`; linkuri **absolute** `/resurse/css/...`, `/resurse/js/...`
+- [x] Rute acasă: **`app.get(['/', '/index', '/home'], ...)`** — același șablon
+- [x] Rută finală **`/:pagina`** → `pagini/<pagina>.ejs` cu `res.render(..., callback)`; „Failed to lookup view” → **404**; alte erori → pagină generică
+- [x] `erori.json`: `cale_baza`, `eroare_default`, `info_erori` (400, 403, 404); `initErori()`, `obGlobal.obErori`, `afisareEroare()`
+- [x] Pagină suplimentară **Despre noi** (`/despre-noi`), fără magazin cu DB / login
+- [x] **IP vizitator** în `res.locals` / secțiunea „Profilul tău” (`<%= clientIp %>`)
+- [x] **403** — cale `/resurse/.../` (director fără fișier); **400** — cerere `*.ejs`
+- [x] **`/favicon.ico`** cu `sendFile`
+- [x] Foldere `temp`, `logs`, `backup`, `fisiere_uploatate` cu `path.join`; listate în `.gitignore`
+- [x] **Bonus validare** `erori.json` la pornire (fișier lipsă, chei obligatorii, imagini existente, identificatori duplicați, chei duplicate în bloc `eroare_default` pe șir brut)
+- [x] **video-vtt:** `<video>` poster, `controls`, `preload="none"`, 2 surse (mp4, webm), 2 track-uri (ro default, en), VTT cu stil și poziții sus/jos
+- [x] **stilizare-linkuri:** `:visited` cu variabilă CSS; linkuri `http` cu `::before`; efect radial în `main` pentru linkuri non-externe; `:active` cu bordură
 
 ---
 
-*Ultima actualizare: Etapa 3 — Meniu SASS & print*
+*Ultima actualizare: Etapa 4 — Express & EJS*

@@ -133,4 +133,7 @@
     --z-modal:     300;
     --z-toast:     400;
     --z-overlay:   500;
+
+    /* Etapa 4 — link vizitat (stilizare-linkuri), din schema dark */
+    --link-vizitat: #93c5fd;
 }
